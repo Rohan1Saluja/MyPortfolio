@@ -5,8 +5,8 @@ const Header = () => {
   const tabs = [
     { name: "Color Game", route: "/color-game" },
     { name: "Data Muse", route: "/datamuse" },
+    { name: "Point Board", route: "/point-board" },
     { name: "Tasks", route: "/tasks" },
-    { name: "About", route: "/about" },
     { name: "User Form", route: "/form" },
   ];
   return (

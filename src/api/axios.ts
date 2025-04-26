@@ -1,5 +1,5 @@
 import axios from "axios";
-console.log("BASE - ", import.meta.env.VITE_APP_MUSE_API_URL);
+
 const museApi = axios.create({
   baseURL: import.meta.env.VITE_APP_MUSE_API_URL,
 });

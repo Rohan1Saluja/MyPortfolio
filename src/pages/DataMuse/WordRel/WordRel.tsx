@@ -49,6 +49,7 @@ const WordRel: React.FC = () => {
           variant="contained"
           className="!bg-gray-600 min-w-28 px-4"
           onClick={() => handleAction(ActionTypes.ANTONYMS)}
+          disabled={word.length === 0}
         >
           Antonyms
         </Button>
@@ -56,6 +57,7 @@ const WordRel: React.FC = () => {
           variant="contained"
           className="!bg-gray-600 min-w-28 px-4"
           onClick={() => handleAction(ActionTypes.SYNONYMS)}
+          disabled={word.length === 0}
         >
           Synonyms
         </Button>
@@ -63,6 +65,7 @@ const WordRel: React.FC = () => {
           variant="contained"
           className="!bg-gray-600 min-w-28 px-4"
           onClick={() => handleAction(ActionTypes.HOMOPHONES)}
+          disabled={word.length === 0}
         >
           Homophones
         </Button>
