@@ -1,18 +1,38 @@
+@import "tailwindcss";
+
+@import "./theme//colors.css";
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  box-sizing: border-box;
+body {
+  /* Apply default text color from theme */
+  color: var(--color-text); /* Use the text color variable */
+
+  /* --- Background Setup --- */
+
+  /* 1. Fallback background color (uses the theme variable) */
+  /* This is also the base color the gradient fades TO */
+  background-color: var(--color-background);
+
+  /* 2. The radial gradient (using theme variables) */
+  background-image: radial-gradient(
+    ellipse at bottom right,
+    /* Shape and position */ var(--color-secondary-800) 0%,
+    /* Subtle purple starts at corner */ var(--color-background) 70%
+      /* Fades to base color by 70% radius */
+  );
+
+  /* Ensure body takes at least full viewport height */
+  min-height: 100vh;
+
+  /* Optional: Prevent background repeating if needed (usually not for full body) */
+  /* background-repeat: no-repeat; */
+
+  /* Optional: Keep gradient fixed when scrolling */
+  /* background-attachment: fixed; */
 }

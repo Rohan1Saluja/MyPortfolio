@@ -1,16 +1,15 @@
 import { useNavigate } from "react-router-dom";
+import Banner from "./Sections/Banner";
+import About from "./Sections/About";
+import Contact from "./Sections/Contact";
 
 const Home = () => {
   const navigate = useNavigate();
   return (
-    <section className="flex items-center justify-center gap-4 min-h-1/2">
-      Navigate to{" "}
-      <span
-        onClick={() => navigate("/form")}
-        className="underline hover:cursor-pointer"
-      >
-        User Form
-      </span>
+    <section className="">
+      <Banner />
+      <About />
+      <Contact />
     </section>
   );
 };

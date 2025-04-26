@@ -1,0 +1,77 @@
+@theme {
+  --color-background: #100c14; /* Default background */
+  --color-background-50: #f5f4f6;
+  --color-background-100: #ebeaef;
+  --color-background-200: #d6d5dd;
+  --color-background-300: #c2c0cb;
+  --color-background-400: #adaab9;
+  --color-background-500: #8b869b;
+  --color-background-600: #68627d;
+  --color-background-700: #46405e;
+  --color-background-800: #28233f;
+  --color-background-900: #100c14; /* Core dark background */
+
+  --color-text: #f0f0f0; /* Default text */
+  --color-text-50: #ffffff;
+  --color-text-100: #f0f0f0;
+  --color-text-200: #e0e0e0;
+  --color-text-300: #cccccc;
+  --color-text-400: #b3b3b3;
+  --color-text-500: #999999; /* Mid-grey */
+  --color-text-600: #808080;
+  --color-text-700: #666666;
+  --color-text-800: #4d4d4d;
+  --color-text-900: #333333; /* Darkest grey */
+
+  --color-primary: #bfa058; /* Default primary */
+  --color-primary-50: #fcf8ed;
+  --color-primary-100: #f6edd5;
+  --color-primary-200: #edddae;
+  --color-primary-300: #e4cc86;
+  --color-primary-400: #dab967;
+  --color-primary-500: #bfa058; /* Main gold color */
+  --color-primary-600: #a88b4e;
+  --color-primary-700: #8c7343;
+  --color-primary-800: #705b38;
+  --color-primary-900: #59482d; /* Darkest bronze */
+  --color-primary-rgb: 191, 160, 88;
+
+  --color-secondary: #3f2250; /* Default secondary */
+  --color-secondary-50: #f0eaf3;
+  --color-secondary-100: #e1d6e8;
+  --color-secondary-200: #c4add1;
+  --color-secondary-300: #a785ba;
+  --color-secondary-400: #8a5ea2;
+  --color-secondary-500: #6e3f89;
+  --color-secondary-600: #552f6b;
+  --color-secondary-700: #3f2250; /* Usable dark purple */
+  --color-secondary-800: #2a1a3a; /* Gradient purple */
+  --color-secondary-900: #1e112a; /* Darkest shade */
+
+  --color-accent: #6a4a8a; /* Default accent */
+  --color-accent-50: #f6f2f9;
+  --color-accent-100: #ede5f3;
+  --color-accent-200: #dccae8;
+  --color-accent-300: #c9afdb;
+  --color-accent-400: #a688c4;
+  --color-accent-500: #8c6caf;
+  --color-accent-600: #6a4a8a; /* Main accent purple */
+  --color-accent-700: #573b71;
+  --color-accent-800: #432e59;
+  --color-accent-900: #322343; /* Darkest shade */
+}
+
+@layer utilities {
+  .button-shine {
+    background-image: linear-gradient(
+      to right,
+      hsla(0, 0%, 100%, 0) 0%,
+      hsla(0, 0%, 100%, 0.35) 50%,
+      hsla(0, 0%, 100%, 0) 100%
+    );
+  }
+  /* Optional: Utility to remove shine */
+  .button-shine-none {
+    background-image: none;
+  }
+}
