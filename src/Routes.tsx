@@ -6,6 +6,7 @@ import Tasks from "./pages/Tasks/Tasks";
 import AddTask from "./pages/Tasks/AddTask/AddTask";
 import ColorGame from "./pages/ColorGame/ColorGame";
 import DataMuse from "./pages/DataMuse/DataMuse";
+import PointBoard from "./pages/PointBoard/PointBoard";
 
 const Routes = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const Routes = createBrowserRouter([
       {
         path: "/datamuse",
         element: <DataMuse />,
+      },
+      {
+        path: "/point-board",
+        element: <PointBoard />,
       },
       {
         path: "/tasks",

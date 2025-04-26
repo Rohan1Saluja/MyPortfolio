@@ -11,11 +11,9 @@ const MAX_HISTORY_LENGTH = 10;
 
 export const tasks = (state = initialState, action: any) =>
   produce(state, (draft: any) => {
-    console.log("Current State - ", state, ", action - ", action);
     switch (action.type) {
       case TaskActionTypes.ADD_TASK:
         draft.history.push(draft.tasks.slice());
-        console.log("Payload - ", action.payload);
         if (draft.history.length > MAX_HISTORY_LENGTH) {
           draft.history.shift(); // remove the oldest snapshot
         }
