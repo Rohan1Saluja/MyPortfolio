@@ -4,6 +4,7 @@ import CustomButton from "../../../components/UI/CustomButton";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { sendMail } from "../../../api/contact";
+import { LoadingIcon } from "../../../assets/icons";
 
 const Contact: React.FC = () => {
   const [loading, setLoading] = React.useState(false);
@@ -13,14 +14,7 @@ const Contact: React.FC = () => {
       setLoading(true);
       try {
         const response = await sendMail(payload);
-
-        if (response.ok) {
-          const resultData = await response.json();
-          console.log("Backend success response:", resultData);
-          // return { success: true, message: "Message sent!" };
-        } else {
-          throw { message: response.status };
-        }
+        console.log("response - ", response);
       } catch (error: any) {
         console.error("Error sending mail:", error);
         //   return { success: false, message: error.message };
@@ -98,7 +92,7 @@ const Contact: React.FC = () => {
           />
 
           <CustomButton type="submit" size="large" sx={{ mt: 2 }}>
-            Send
+            {loading ? <LoadingIcon /> : "Send"}
           </CustomButton>
         </form>
       </div>
