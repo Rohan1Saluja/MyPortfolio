@@ -38,7 +38,7 @@ const EventCard: React.FC<Props> = ({ event }) => {
             key={index}
             src={imgUrl}
             alt={`Event ${index}`}
-            className="h-32 w-48 object-cover rounded-lg flex-shrink-0"
+            className="h-32 w-48 object-cover rounded-lg flex-shrink-0 animate-fade-in"
           />
         ))}
       </div>
