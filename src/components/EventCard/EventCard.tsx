@@ -16,7 +16,7 @@ interface Props {
 
 const EventCard: React.FC<Props> = ({ event }) => {
   return (
-    <div className="rounded-2xl p-6 flex flex-col gap-4 w-3/4 mx-auto shadow-xl overflow-hidden">
+    <div className="rounded-2xl p-6 flex flex-col gap-4 md:w-3/4 mx-auto shadow-xl overflow-hidden">
       <h2 className="text-xl font-bold">{event.title}</h2>
       <h4 className="text-sm text-text-200">{event.organizer}</h4>
       <p className="text-sm text-gray-500">
