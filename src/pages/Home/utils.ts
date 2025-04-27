@@ -69,3 +69,26 @@ export const technologies = [
     ],
   },
 ];
+
+export const projects = [
+  {
+    title: "Repair Booking",
+    image: "/previews/booking-preview.png",
+    link: "https://booking.repairable.no/",
+  },
+  {
+    title: "Recurrent Software",
+    image: "/previews/recurrent-preview.png",
+    link: "https://www.recurrentsoftware.com/",
+  },
+  {
+    title: "Repairable Community",
+    image: "/previews/repairable-preview.png",
+    link: "https://www.repairable.community/",
+  },
+  {
+    title: "Seamster Dashboard",
+    image: "/previews/seamster-preview.png",
+    link: "https://partner.repairable.community/",
+  },
+];

@@ -3,6 +3,7 @@ import Banner from "./Sections/Banner";
 import About from "./Sections/About";
 import Contact from "./Sections/Contact";
 import TechStack from "./Sections/TechStack";
+import Folio from "./Sections/Folio";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -11,6 +12,7 @@ const Home = () => {
       <Banner />
       <About />
       <TechStack />
+      <Folio />
       <Contact />
     </section>
   );

@@ -1,6 +1,6 @@
 import { technologies } from "../utils";
 
-const TechStack = () => {
+const TechStack: React.FC = () => {
   return (
     <section className="py-16 px-8">
       <div className="max-w-6xl mx-auto">
