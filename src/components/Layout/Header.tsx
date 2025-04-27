@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import MyLogo from "../../assets/logos/MyLogo.png";
+import CustomButton from "../UI/CustomButton";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -10,6 +11,16 @@ const Header = () => {
     { name: "Tasks", route: "/tasks" },
     { name: "User Form", route: "/form" },
   ];
+
+  const handleScroll = () => {
+    const folioSection = document.querySelector("#contact");
+    if (folioSection) {
+      setTimeout(() => {
+        folioSection.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  };
+
   return (
     <header className="flex items-center justify-between gap-4 w-full h-[8dvh] shadow-sm px-2 overflow-x-hidden">
       <img
@@ -18,7 +29,7 @@ const Header = () => {
         className="rounded-full w-10 h-10 hover:cursor-pointer"
         onClick={() => navigate("/")}
       />
-      <div className="flex items-center gap-4">
+      {/* <div className="flex items-center gap-4">
         {tabs.map((tab: any, index: number) => (
           <span
             key={`${tab.name}-${index}`}
@@ -28,7 +39,14 @@ const Header = () => {
             {tab.name}
           </span>
         ))}
-      </div>
+      </div> */}
+      <CustomButton
+        size="small"
+        className="animate-fade-in-up !mx-2"
+        onClick={handleScroll}
+      >
+        Get In Touch
+      </CustomButton>
     </header>
   );
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import MyPixarArt from "../../../assets/logos/PixarArt.jpg";
-
+import { Instagram, LinkedIn, X } from "../../../assets/icons";
 const About: React.FC = () => {
   return (
     <section id="about" className="py-16 md:py-24 px-4 md:px-10">
@@ -21,14 +21,43 @@ const About: React.FC = () => {
                 height="224"
               />
             </div>
+            <div className="flex justify-center mt-4 space-x-4">
+              <a
+                href="https://www.linkedin.com/in/rohansaluja"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:text-primary-dark transition-colors"
+                aria-label="LinkedIn"
+              >
+                <LinkedIn />
+              </a>
+              <a
+                href="https://twitter.com/rohan1saluja"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:text-primary-dark transition-colors"
+                aria-label="X (formerly Twitter)"
+              >
+                <X />
+              </a>
+              <a
+                href="https://www.instagram.com/rohansalujamusic"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:text-primary-dark transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram />
+              </a>
+            </div>
           </div>
           <div className="text-center md:text-left flex-grow max-w-2xl">
-            <h3 className="text-2xl md:text-3xl font-semibold mb-4 animate-fade-in-up">
+            <h3 className="text-xl md:text-2xl font-semibold mb-4 animate-fade-in-up">
               I'm Rohan Saluja
             </h3>
             <p className="text-lg md:text-xl mb-4 text-text/90 animate-fade-in-up">
-              a Frontend Engineer passionate about crafting modern, responsive,
-              and user-first web experiences.
+              An AI Frontend Engineer passionate about crafting modern,
+              responsive, and user-first web experiences.
             </p>
             <p className="text-lg md:text-xl mb-4 text-text/90 animate-fade-in-up">
               I bring ideas to life through clean, scalable code and thoughtful
