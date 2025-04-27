@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+# enviroment vars
+.env
+.env.*
+.vercel

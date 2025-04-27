@@ -11,12 +11,12 @@ const Header = () => {
     { name: "User Form", route: "/form" },
   ];
   return (
-    <header className="flex items-center justify-between gap-4 w-full h-[8dvh] shadow-sm px-2">
+    <header className="flex items-center justify-between gap-4 w-full h-[8dvh] shadow-sm px-2 overflow-x-hidden">
       <img
         src={MyLogo}
         alt=""
         className="rounded-full w-10 h-10 hover:cursor-pointer"
-        onClick={() => navigate("/home")}
+        onClick={() => navigate("/")}
       />
       <div className="flex items-center gap-4">
         {tabs.map((tab: any, index: number) => (

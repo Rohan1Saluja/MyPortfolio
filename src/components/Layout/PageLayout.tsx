@@ -11,7 +11,7 @@ const PageLayout = ({ children }: Props) => {
 
   useEffect(() => {
     if (window.location.pathname === "/") {
-      navigate("/home");
+      navigate("/");
     }
   }, [navigate]);
 

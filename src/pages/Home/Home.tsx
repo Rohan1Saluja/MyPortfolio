@@ -6,7 +6,7 @@ import Contact from "./Sections/Contact";
 const Home = () => {
   const navigate = useNavigate();
   return (
-    <section className="">
+    <section className="overflow-x-hidden">
       <Banner />
       <About />
       <Contact />
