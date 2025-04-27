@@ -10,11 +10,9 @@ interface Props {
 const Preferences: React.FC<Props> = ({ setActiveStep }) => {
   const dispatch = useDispatch();
   const { create } = useSelector((state: any) => state.user);
-  console.log("User - ", create);
   const formik = useFormik({
     initialValues: initialState.create.preferences,
     onSubmit: (values) => {
-      console.log("values - ", values);
       dispatch(savePreferences(values));
       setActiveStep((prevState: number) => prevState + 1);
     },
