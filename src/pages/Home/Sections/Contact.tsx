@@ -1,32 +1,56 @@
-import React, { useState, FormEvent } from "react";
+import React from "react";
 import CustomTextField from "../../../components/UI/CustomTextField";
 import CustomButton from "../../../components/UI/CustomButton";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import { sendMail } from "../../../api/contact";
 
 const Contact: React.FC = () => {
-  // Basic state for form fields (optional, for controlled components)
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
+  const [loading, setLoading] = React.useState(false);
+
+  const initiateMail = React.useCallback(
+    async (payload: any) => {
+      setLoading(true);
+      try {
+        const response = await sendMail(payload);
+
+        if (response.ok) {
+          const resultData = await response.json();
+          console.log("Backend success response:", resultData);
+          // return { success: true, message: "Message sent!" };
+        } else {
+          throw { message: response.status };
+        }
+      } catch (error: any) {
+        console.error("Error sending mail:", error);
+        //   return { success: false, message: error.message };
+      } finally {
+        setLoading(false);
+      }
+    },
+    [setLoading]
+  );
+
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
+    validationSchema: Yup.object({
+      name: Yup.string().required("Name is required"),
+      email: Yup.string()
+        .email("Invalid email address")
+        .required("Email is required"),
+      message: Yup.string(),
+    }),
+    onSubmit: async (values, { resetForm }) => {
+      await initiateMail(values);
+      setTimeout(resetForm, 500);
+    },
   });
 
-  const handleChange = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = event.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    // Add your form submission logic here (e.g., send data to an API)
-    console.log("Form data submitted:", formData);
-    alert("Form submitted (check console)!"); // Placeholder feedback
-    setFormData({ name: "", email: "", message: "" });
-  };
+  const formData = formik.values;
 
   return (
     <section id="contact" className="py-6 md:py-10">
@@ -36,15 +60,17 @@ const Contact: React.FC = () => {
         </h2>
 
         <form
-          onSubmit={handleSubmit}
+          onSubmit={formik.handleSubmit}
           className="max-w-lg mx-auto flex flex-col gap-6"
         >
           <CustomTextField
             label="Name"
             name="name"
             value={formData.name}
-            onChange={handleChange}
-            required
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            error={formik.touched.name && Boolean(formik.errors.name)}
+            helperText={formik.touched.name ? formik.errors.name : " "}
             fullWidth
           />
 
@@ -53,8 +79,10 @@ const Contact: React.FC = () => {
             name="email"
             type="email"
             value={formData.email}
-            onChange={handleChange}
-            required
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            error={formik.touched.email && Boolean(formik.errors.email)}
+            helperText={formik.touched.email ? formik.errors.email : " "}
             fullWidth
           />
 
@@ -63,8 +91,8 @@ const Contact: React.FC = () => {
             label="Message"
             name="message"
             value={formData.message}
-            onChange={handleChange}
-            required
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             fullWidth
             rows={5}
           />

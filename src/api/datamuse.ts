@@ -1,4 +1,4 @@
-import museApi from "./axios";
+import museApi from "./museApi";
 
 export const getSynonyms = async (word: string) => {
   const response = await museApi.get(`/words?rel_syn=${word}`);

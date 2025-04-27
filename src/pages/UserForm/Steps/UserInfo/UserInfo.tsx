@@ -60,7 +60,7 @@ const UserInfo: React.FC<Props> = ({ setActiveStep }) => {
       <div className="flex items-center justify-center gap-2 mt-auto">
         <button
           className="rounded-xl border-gray-700 shadow-sm w-max text-gray-800 px-4 py-2 hover:cursor-pointer hover:text-gray-600"
-          onClick={() => navigate("/home")}
+          onClick={() => navigate("/")}
         >
           Cancel
         </button>
