@@ -4,4 +4,4 @@
 
 ## Watch the Current Site
 
-You can view the live version of the project here: [Mini Projects Compilation](https://mini-projects-compilation.vercel.app/)
+You can view the live version of the project here: [Portfolio](https://mini-projects-compilation.vercel.app/)
