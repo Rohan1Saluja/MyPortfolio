@@ -22,6 +22,8 @@ const Community = () => {
     fetch(getCommunityMeetups, []);
   }, [fetch]);
 
+  console.log("Events - ", events);
+
   return (
     <div className="min-h-screen px-6 py-12">
       <h1 className="text-3xl font-bold mb-8 text-center">
@@ -29,7 +31,7 @@ const Community = () => {
       </h1>
 
       <div className="flex flex-col items-center justify-center gap-4">
-        {events?.length > 0 &&
+        {events.length > 0 &&
           events?.map((event: any, index: number) => (
             <EventCard key={index} event={event} />
           ))}
