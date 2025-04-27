@@ -7,6 +7,7 @@ import AddTask from "./pages/Tasks/AddTask/AddTask";
 import ColorGame from "./pages/ColorGame/ColorGame";
 import DataMuse from "./pages/DataMuse/DataMuse";
 import PointBoard from "./pages/PointBoard/PointBoard";
+import Community from "./pages/Community/Community";
 
 const Routes = createBrowserRouter([
   {
@@ -17,6 +18,11 @@ const Routes = createBrowserRouter([
         path: "",
         element: <Home />,
       },
+      {
+        path: "community",
+        element: <Community />,
+      },
+
       {
         path: "/color-game",
         element: <ColorGame />,

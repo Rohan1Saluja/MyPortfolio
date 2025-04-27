@@ -17,10 +17,10 @@ const TechStack: React.FC = () => {
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",
-                filter: "brightness(60%)",
+                filter: "brightness(55%)",
               }}
             >
-              <h3 className="text-2xl font-semibold mb-6 text-center animate-shimmer">
+              <h3 className="text-2xl font-semibold mb-6 text-center animate-shimmer text-text">
                 {techCategory.category}
               </h3>
               <div className="flex flex-wrap gap-4 justify-center">
@@ -30,7 +30,7 @@ const TechStack: React.FC = () => {
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 bg-accent-800/80 hover:bg-accent-700/90 backdrop-blur-xl text-sm rounded-lg transition-colors animate-fade-in-up"
+                    className="px-4 py-2 bg-accent-700 hover:bg-accent-600 !text-white backdrop-blur-xl text-sm rounded-lg transition-colors animate-fade-in-up"
                   >
                     {item.name}
                   </a>

@@ -2,7 +2,7 @@ import React from "react";
 
 const useApiCallhook = () => {
   const [loading, setLoading] = React.useState(false);
-  const [data, setData] = React.useState([]);
+  const [data, setData] = React.useState<any>([]);
   const [error, setError] = React.useState(null);
 
   const fetch = React.useCallback(
