@@ -27,8 +27,6 @@ const Tasks: React.FC = () => {
 
   React.useEffect(() => {}, [tasks]);
 
-  console.log("tasks - ", tasks);
-
   const handleToggle = (taskId: string) => {
     dispatch(toggleTaskStatus(taskId));
   };
