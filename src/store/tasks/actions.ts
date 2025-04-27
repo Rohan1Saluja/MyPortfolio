@@ -1,12 +1,9 @@
 import { Task, TaskActionTypes } from "./types";
 
-export const addTask = (task: Task) => (
-  console.log("Task - ", task),
-  {
-    type: TaskActionTypes.ADD_TASK,
-    payload: task,
-  }
-);
+export const addTask = (task: Task) => ({
+  type: TaskActionTypes.ADD_TASK,
+  payload: task,
+});
 
 export const toggleTaskStatus = (taskId: string) => ({
   type: TaskActionTypes.TOGGLE_TASK_STATUS,
