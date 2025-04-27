@@ -5,11 +5,12 @@ import CustomButton from "../UI/CustomButton";
 const Header = () => {
   const navigate = useNavigate();
   const tabs = [
-    { name: "Color Game", route: "/color-game" },
-    { name: "Data Muse", route: "/datamuse" },
-    { name: "Point Board", route: "/point-board" },
-    { name: "Tasks", route: "/tasks" },
-    { name: "User Form", route: "/form" },
+    // { name: "Color Game", route: "/color-game" },
+    // { name: "Data Muse", route: "/datamuse" },
+    // { name: "Point Board", route: "/point-board" },
+    // { name: "Tasks", route: "/tasks" },
+    // { name: "User Form", route: "/form" },
+    { name: "Community", route: "/community" },
   ];
 
   const handleScroll = () => {
@@ -29,24 +30,24 @@ const Header = () => {
         className="rounded-full w-10 h-10 hover:cursor-pointer"
         onClick={() => navigate("/")}
       />
-      {/* <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4">
         {tabs.map((tab: any, index: number) => (
           <span
             key={`${tab.name}-${index}`}
-            className="rounded-xl shadow-sm bg-gray-600/20 hover:bg-gray-600/40 transition-all delay-100 shadow-gray-800 px-3 py-2 active:translate-y-0.5 hover:cursor-pointer"
+            className="rounded-xl shadow-sm text-text-200 hover:text-text-100 transition-all delay-100 px-3 py-2 active:translate-y-0.5 hover:cursor-pointer"
             onClick={() => navigate(tab.route)}
           >
             {tab.name}
           </span>
         ))}
-      </div> */}
-      <CustomButton
-        size="small"
-        className="animate-fade-in-up !mx-2"
-        onClick={handleScroll}
-      >
-        Get In Touch
-      </CustomButton>
+        <CustomButton
+          size="small"
+          className="animate-fade-in-up !mx-2"
+          onClick={handleScroll}
+        >
+          Get In Touch
+        </CustomButton>
+      </div>
     </header>
   );
 };
