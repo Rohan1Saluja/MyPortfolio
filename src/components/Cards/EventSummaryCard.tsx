@@ -1,5 +1,6 @@
 import React from "react";
 import { EventSummaryModel } from "../../interfaces/common.model";
+import { motion } from "framer-motion";
 
 interface Props {
   event: EventSummaryModel;
@@ -8,9 +9,13 @@ interface Props {
 
 const EventSummaryCard: React.FC<Props> = ({ event, onClick }) => {
   return (
-    <div
-      className="border border-secondary-500/35 rounded-lg overflow-hidden shadow-xl backdrop-blur-lg bg-white/10 hover:bg-white/20 transition-all duration-300 animate-fade-in-up hover:cursor-pointer hover:-translate-y-0.5"
+    <motion.div
+      className="border border-secondary-500/35 rounded-lg overflow-x-hidden shadow-xl backdrop-blur-lg bg-white/10 hover:bg-white/20 hover:cursor-pointer"
       onClick={onClick}
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.8, ease: "easeInOut" }}
     >
       <img src={event?.image} alt={""} className="w-full h-48 object-cover" />
       <div className="p-4">
@@ -23,7 +28,7 @@ const EventSummaryCard: React.FC<Props> = ({ event, onClick }) => {
           {event?.venue}, {event?.city}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
