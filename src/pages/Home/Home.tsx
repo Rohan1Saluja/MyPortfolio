@@ -4,6 +4,7 @@ import Contact from "./Sections/Contact";
 import TechStack from "./Sections/TechStack";
 import Folio from "./Sections/Folio";
 import EventsOverview from "./Sections/EventsOverview";
+import Highlights from "./Sections/Highlights";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <Banner />
       <About />
       <TechStack />
+      <Highlights />
       <Folio />
       <EventsOverview />
       <Contact />

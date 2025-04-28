@@ -92,3 +92,59 @@ export const projects = [
     link: "https://partner.repairable.community/",
   },
 ];
+
+// ----------------------------------------------
+// ----------------------------------------------
+
+export const highlights = [
+  {
+    title: "Dynamic Frontend Development",
+    description:
+      "Specialized in building scalable, customizable UIs using Next.js, React, and TypeScript — empowering businesses to adapt platforms to their unique workflows.",
+  },
+  {
+    title: "AI-Powered Solutions",
+    description:
+      "Led the development of 'Ally,' an AI chat interface for a Healthcare SaaS platform, optimizing architecture and user experience via RAG vs CAG evaluation.",
+  },
+  {
+    title: "End-to-End Product Development",
+    description:
+      "Boosted monthly orders by 35% at Repairable and reduced server costs by 70% by building efficient client flows and cloud architectures.",
+  },
+  {
+    title: "Backend API Engineering",
+    description:
+      "Developed high-performance Node.js APIs powering AI services and real-time client demos, ensuring low-latency communication and data integrity.",
+  },
+  {
+    title: "Strategic Collaboration",
+    description:
+      "Worked with senior engineers and clients to shape product roadmaps, optimize workflows, and implement secure Role-Based Access Control (RBAC).",
+  },
+  {
+    title: "Modern Tech Stack Expertise",
+    description:
+      "Proficient with ReactJS, NextJS, NodeJS, TypeScript, TailwindCSS, Docker, Supabase, SQL, and scalable backend systems.",
+  },
+  {
+    title: "Healthcare Dashboard Project",
+    description:
+      "Built a real-time monitoring dashboard for patient health analytics, integrating dynamic visualizations and responsive UI elements.",
+  },
+  {
+    title: "Crypto Market Analyzer",
+    description:
+      "Developed a crypto analysis app using CoinGecko API and Trading View Widgets, allowing users to explore fundamental metrics with ease.",
+  },
+  {
+    title: "Performance & Optimization",
+    description:
+      "Experienced in optimizing frontend and backend performance — reducing load times, improving responsiveness, and ensuring seamless UX.",
+  },
+  {
+    title: "Continuous Learning & Certifications",
+    description:
+      "Certified in 'Introduction to Programming with C' (NPTEL) and 'React Development' (Internshala Trainings), always staying updated with emerging tech trends.",
+  },
+];

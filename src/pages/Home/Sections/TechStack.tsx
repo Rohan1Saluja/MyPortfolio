@@ -12,14 +12,18 @@ const TechStack: React.FC = () => {
             <div
               key={techCategory.category}
               className="relative shadow-xl rounded-2xl p-6 overflow-x-hidden flex flex-col items-center justify-center hover:-translate-y-0.5"
-              style={{
-                backgroundImage: `url(${techCategory.backgroundImage})`,
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                filter: "brightness(55%)",
-              }}
             >
+              <div
+                className="absolute inset-0 animate-pulse"
+                style={{
+                  backgroundImage: `url(${techCategory.backgroundImage})`,
+                  backgroundSize: "cover",
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "center",
+                  filter: "brightness(55%)",
+                  zIndex: -1,
+                }}
+              />
               <h3 className="text-2xl font-semibold mb-6 text-center animate-shimmer text-text">
                 {techCategory.category}
               </h3>
