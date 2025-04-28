@@ -1,8 +1,5 @@
-// src/pages/community.tsx
-
-import React, { useEffect, useState } from "react";
-import axios from "axios"; // if you're using axios
-import EventCard from "../../components/EventCard/EventCard";
+import React, { useEffect } from "react";
+import EventCard from "../../components/Cards/EventCard";
 import useApiCallhook from "../../hooks/useApiCallhook";
 import { getCommunityMeetups } from "../../api/events";
 
@@ -25,7 +22,7 @@ const Community = () => {
   return (
     <div className="min-h-screen px-6 py-12">
       <h1 className="text-3xl font-bold mb-8 text-center">
-        Developer Community
+        My Journey Through Inspiring Events & Community Meetups
       </h1>
 
       <div className="flex flex-col items-center justify-center gap-4">
