@@ -16,7 +16,7 @@ const PageLayout = ({ children }: Props) => {
   }, [navigate]);
 
   return (
-    <div className="w-full h-[100dvh] overflow-auto">
+    <div className="w-full h-[100dvh] overflow-x-auto">
       <Header />
       {children}
     </div>

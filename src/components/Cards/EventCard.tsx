@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { slugify } from "../../utils/utils";
+import { motion } from "framer-motion";
 
 interface EventCardModel {
   title: string;
@@ -28,10 +29,13 @@ const EventCard: React.FC<Props> = ({ event }) => {
   }, [event]);
 
   return (
-    <div
+    <motion.div
       id={slugify(event?.title)}
       ref={cardRef}
       className="rounded-2xl p-6 flex flex-col gap-4 md:w-3/4 mx-auto shadow-xl overflow-hidden"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <h2 className="text-xl font-bold">{event.title}</h2>
       <h4 className="text-sm text-text-200">{event.organizer}</h4>
@@ -58,7 +62,7 @@ const EventCard: React.FC<Props> = ({ event }) => {
           />
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

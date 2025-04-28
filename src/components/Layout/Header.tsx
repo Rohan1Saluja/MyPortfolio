@@ -40,11 +40,7 @@ const Header = () => {
             {tab.name}
           </span>
         ))}
-        <CustomButton
-          size="small"
-          className="animate-fade-in-up !mx-2"
-          onClick={handleScroll}
-        >
+        <CustomButton size="small" className="!mx-2" onClick={handleScroll}>
           Get In Touch
         </CustomButton>
       </div>

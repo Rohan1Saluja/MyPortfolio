@@ -1,4 +1,6 @@
+import React from "react";
 import { projects } from "../utils";
+import { motion } from "framer-motion";
 
 const Folio: React.FC = () => {
   return (
@@ -14,9 +16,13 @@ const Folio: React.FC = () => {
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-center md:max-w-2xl mx-auto">
         {projects.map((project, index) => (
-          <div
+          <motion.div
             key={index}
-            className="border border-secondary-500/35 rounded-lg overflow-hidden shadow-xl backdrop-blur-lg bg-white/10 hover:bg-white/20 transition-all duration-300 animate-fade-in-up hover:-translate-y-0.5"
+            className="border border-secondary-500/35 rounded-lg overflow-x-hidden shadow-xl backdrop-blur-lg bg-white/10 hover:bg-white/20 hover:-translate-y-1"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
           >
             <a href={project.link} target="_blank" rel="noopener noreferrer">
               <img
@@ -30,7 +36,7 @@ const Folio: React.FC = () => {
                 </h3>
               </div>
             </a>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

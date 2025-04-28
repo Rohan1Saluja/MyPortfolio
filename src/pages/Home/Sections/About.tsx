@@ -1,6 +1,8 @@
 import React from "react";
 import MyPixarArt from "../../../assets/logos/PixarArt.jpg";
 import { Instagram, LinkedIn, X } from "../../../assets/icons";
+import { motion } from "framer-motion";
+
 const About: React.FC = () => {
   return (
     <section id="about" className="py-16 md:py-24 px-4 md:px-10">
@@ -12,7 +14,12 @@ const About: React.FC = () => {
         </h2>
         <div className="flex flex-col md:flex-row items-center md:items-start gap-10 md:gap-16">
           <div className="flex-shrink-0">
-            <div className="w-48 h-48 md:w-56 md:h-56 rounded-full border-2 border-primary p-1 overflow-hidden shadow-lg">
+            <motion.div
+              className="w-48 h-48 md:w-56 md:h-56 rounded-full border-2 border-primary p-1 overflow-hidden shadow-lg"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               <img
                 src={MyPixarArt}
                 alt="Stylized picture of Rohan Saluja"
@@ -20,8 +27,13 @@ const About: React.FC = () => {
                 width="224"
                 height="224"
               />
-            </div>
-            <div className="flex justify-center mt-4 space-x-4">
+            </motion.div>
+            <motion.div
+              className="flex justify-center mt-4 space-x-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               <a
                 href="https://www.linkedin.com/in/rohansaluja"
                 target="_blank"
@@ -49,7 +61,7 @@ const About: React.FC = () => {
               >
                 <Instagram />
               </a>
-            </div>
+            </motion.div>
           </div>
           <div className="text-center md:text-left flex-grow max-w-2xl">
             <h3 className="text-xl md:text-2xl font-semibold mb-4 animate-fade-in-up">

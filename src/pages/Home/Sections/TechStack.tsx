@@ -11,7 +11,7 @@ const TechStack: React.FC = () => {
           {technologies.map((techCategory) => (
             <div
               key={techCategory.category}
-              className="relative shadow-xl rounded-2xl p-6 overflow-hidden flex flex-col items-center justify-center hover:-translate-y-0.5"
+              className="relative shadow-xl rounded-2xl p-6 overflow-x-hidden flex flex-col items-center justify-center hover:-translate-y-0.5"
               style={{
                 backgroundImage: `url(${techCategory.backgroundImage})`,
                 backgroundSize: "cover",
