@@ -14,7 +14,6 @@ const Contact: React.FC = () => {
       setLoading(true);
       try {
         const response = await sendMail(payload);
-        console.log("response - ", response);
       } catch (error: any) {
         console.error("Error sending mail:", error);
         //   return { success: false, message: error.message };

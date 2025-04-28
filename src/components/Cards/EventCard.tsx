@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { slugify } from "../../utils/utils";
 
 interface EventCardModel {
   title: string;
@@ -15,8 +16,23 @@ interface Props {
 }
 
 const EventCard: React.FC<Props> = ({ event }) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const slugFromUrl = window.location.hash.substring(1); // Get the slug from the URL hash
+    const cardId = slugify(event?.title);
+
+    if (slugFromUrl === cardId && cardRef.current) {
+      cardRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [event]);
+
   return (
-    <div className="rounded-2xl p-6 flex flex-col gap-4 md:w-3/4 mx-auto shadow-xl overflow-hidden">
+    <div
+      id={slugify(event?.title)}
+      ref={cardRef}
+      className="rounded-2xl p-6 flex flex-col gap-4 md:w-3/4 mx-auto shadow-xl overflow-hidden"
+    >
       <h2 className="text-xl font-bold">{event.title}</h2>
       <h4 className="text-sm text-text-200">{event.organizer}</h4>
       <p className="text-sm text-gray-500">

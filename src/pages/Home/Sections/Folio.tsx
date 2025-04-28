@@ -2,7 +2,7 @@ import { projects } from "../utils";
 
 const Folio: React.FC = () => {
   return (
-    <section id="folio" className="my-10 px-4">
+    <section id="folio" className="my-20 px-4">
       <h2 className="text-3xl font-semibold text-center mb-8">
         Crafting Solutions: A Glimpse into My Journey
       </h2>
@@ -12,11 +12,11 @@ const Folio: React.FC = () => {
         Repairable, here are some of the projects that showcase my expertise and
         passion for software development.
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 justify-center md:max-w-2xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-center md:max-w-2xl mx-auto">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="border border-secondary-500/35 rounded-lg overflow-hidden shadow-xl backdrop-blur-lg bg-white/10 hover:bg-white/20 transition-all duration-300 animate-fade-in-up"
+            className="border border-secondary-500/35 rounded-lg overflow-hidden shadow-xl backdrop-blur-lg bg-white/10 hover:bg-white/20 transition-all duration-300 animate-fade-in-up hover:-translate-y-0.5"
           >
             <a href={project.link} target="_blank" rel="noopener noreferrer">
               <img

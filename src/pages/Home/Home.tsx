@@ -4,6 +4,7 @@ import About from "./Sections/About";
 import Contact from "./Sections/Contact";
 import TechStack from "./Sections/TechStack";
 import Folio from "./Sections/Folio";
+import EventsOverview from "./Sections/EventsOverview";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -13,6 +14,7 @@ const Home = () => {
       <About />
       <TechStack />
       <Folio />
+      <EventsOverview />
       <Contact />
     </section>
   );

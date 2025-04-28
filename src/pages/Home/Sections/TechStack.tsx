@@ -2,7 +2,7 @@ import { technologies } from "../utils";
 
 const TechStack: React.FC = () => {
   return (
-    <section className="py-16 px-8">
+    <section className="my-20 px-8">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-semibold mb-12 text-center">
           Explore My Tech Arsenal
@@ -11,7 +11,7 @@ const TechStack: React.FC = () => {
           {technologies.map((techCategory) => (
             <div
               key={techCategory.category}
-              className="relative shadow-xl rounded-2xl p-6 overflow-hidden flex flex-col items-center justify-center"
+              className="relative shadow-xl rounded-2xl p-6 overflow-hidden flex flex-col items-center justify-center hover:-translate-y-0.5"
               style={{
                 backgroundImage: `url(${techCategory.backgroundImage})`,
                 backgroundSize: "cover",
