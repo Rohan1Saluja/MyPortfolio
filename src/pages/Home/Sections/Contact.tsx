@@ -48,7 +48,7 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className="py-6 md:py-10">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl font-bold mb-10 md:mb-12 text-center text-text">
+        <h2 className="text-2xl md:text-3xl font-semibold mb-10 md:mb-12 text-center text-text">
           I'd Love to Hear From You!
         </h2>
 
