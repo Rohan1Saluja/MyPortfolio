@@ -1,20 +1,16 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import MyLogo from "../../assets/logos/MyLogo.png";
 import CustomButton from "../UI/CustomButton";
+import { AiOutlineDownload } from "react-icons/ai";
 
 const Header = () => {
   const navigate = useNavigate();
-  const tabs = [
-    // { name: "Color Game", route: "/color-game" },
-    // { name: "Data Muse", route: "/datamuse" },
-    // { name: "Point Board", route: "/point-board" },
-    // { name: "Tasks", route: "/tasks" },
-    // { name: "User Form", route: "/form" },
-    { name: "Community", route: "/community" },
-  ];
+  const location = useLocation();
 
-  const handleScroll = () => {
-    const folioSection = document.querySelector("#contact");
+  const tabs = [{ name: "Community", route: "/community" }];
+
+  const handleScroll = (section: string) => {
+    const folioSection = document.querySelector(section);
     if (folioSection) {
       setTimeout(() => {
         folioSection.scrollIntoView({ behavior: "smooth" });
@@ -40,8 +36,25 @@ const Header = () => {
             {tab.name}
           </span>
         ))}
-        <CustomButton size="small" className="!mx-2" onClick={handleScroll}>
-          Get In Touch
+        {location.pathname === "/" && (
+          <span
+            className="rounded-xl shadow-sm text-text-200 hover:text-text-100 transition-all delay-100 px-3 py-2 active:translate-y-0.5 hover:cursor-pointer"
+            onClick={() => handleScroll("#contact")}
+          >
+            Get In Touch
+          </span>
+        )}
+        <CustomButton
+          size="small"
+          className="!mx-2"
+          onClick={() =>
+            window.open(
+              "https://drive.google.com/file/d/1C9a5USWsB-XukHan4Ja3LQZnhg9KqcLM/view?usp=drive_link",
+              "_blank"
+            )
+          }
+        >
+          <AiOutlineDownload /> Resume
         </CustomButton>
       </div>
     </header>
