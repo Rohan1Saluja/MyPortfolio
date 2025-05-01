@@ -5,6 +5,7 @@ import TechStack from "./Sections/TechStack";
 import Folio from "./Sections/Folio";
 import EventsOverview from "./Sections/EventsOverview";
 import Highlights from "./Sections/Highlights";
+import FiverrGig from "./Sections/FiverrGig";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <TechStack />
       <Highlights />
       <Folio />
+      <FiverrGig />
       <EventsOverview />
       <Contact />
     </section>
