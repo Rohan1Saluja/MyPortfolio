@@ -18,7 +18,7 @@ const Folio: React.FC = () => {
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            className="border border-secondary-500/35 rounded-lg overflow-x-hidden shadow-xl backdrop-blur-lg bg-white/10 hover:bg-white/20 hover:-translate-y-1"
+            className="border border-secondary-500/35 rounded-lg overflow-x-hidden shadow-xl backdrop-blur-lg bg-white/10 hover:bg-white/20 transform transition-transform duration-300 hover:scale-[101%]"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}

@@ -5,6 +5,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { sendMail } from "../../../api/contact";
 import { LoadingIcon } from "../../../assets/icons";
+import { FiSend } from "react-icons/fi";
 
 const Contact: React.FC = () => {
   const [loading, setLoading] = React.useState(false);
@@ -91,7 +92,13 @@ const Contact: React.FC = () => {
           />
 
           <CustomButton type="submit" size="large" sx={{ mt: 2 }}>
-            {loading ? <LoadingIcon /> : "Send"}
+            {loading ? (
+              <LoadingIcon />
+            ) : (
+              <p className="flex items-center gap-2">
+                Send <FiSend />{" "}
+              </p>
+            )}
           </CustomButton>
         </form>
       </div>

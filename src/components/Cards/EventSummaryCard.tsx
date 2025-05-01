@@ -10,7 +10,7 @@ interface Props {
 const EventSummaryCard: React.FC<Props> = ({ event, onClick }) => {
   return (
     <motion.div
-      className="border border-secondary-500/35 rounded-lg overflow-x-hidden shadow-xl backdrop-blur-lg bg-white/10 hover:bg-white/20 hover:cursor-pointer"
+      className="border border-secondary-500/35 rounded-lg overflow-x-hidden shadow-xl backdrop-blur-lg bg-white/10 hover:bg-white/20 hover:cursor-pointer transform transition-transform duration-300 hover:scale-[101%]"
       onClick={onClick}
       initial={{ opacity: 0, scale: 0.95 }}
       whileInView={{ opacity: 1, scale: 1 }}

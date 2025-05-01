@@ -54,7 +54,7 @@ const Header = () => {
             )
           }
         >
-          <AiOutlineDownload /> Resume
+          <AiOutlineDownload className="mr-1" /> Resume
         </CustomButton>
       </div>
     </header>
