@@ -6,6 +6,7 @@ import Folio from "./Sections/Folio";
 import EventsOverview from "./Sections/EventsOverview";
 import Highlights from "./Sections/Highlights";
 import FiverrGig from "./Sections/FiverrGig";
+import Freya from "./Sections/Freya";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <TechStack />
       <Highlights />
       <Folio />
+      <Freya />
       <FiverrGig />
       <EventsOverview />
       <Contact />
