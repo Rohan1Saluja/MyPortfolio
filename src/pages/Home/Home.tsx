@@ -16,8 +16,8 @@ const Home = () => {
       <TechStack />
       <Highlights />
       <Folio />
-      <Freya />
-      <FiverrGig />
+      {/* <Freya /> */}
+      {/* <FiverrGig /> */}
       <EventsOverview />
       <Contact />
     </section>
