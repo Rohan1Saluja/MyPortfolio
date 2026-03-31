@@ -67,21 +67,21 @@ const About: React.FC = () => {
             <h3 className="text-xl md:text-2xl font-semibold mb-4 animate-fade-in-up">
               I'm Rohan Saluja
             </h3>
-
+            
             <p className="text-lg md:text-xl mb-4 text-text/90 animate-fade-in-up">
-              A product-focused Software Engineer who builds and scales digital products end-to-end — from intuitive user experiences to robust backend systems.
+              I’m a product-focused Software Engineer who builds and scales digital products end to end, from intuitive user experiences to reliable backend systems.
             </p>
             
             <p className="text-lg md:text-xl mb-4 text-text/90 animate-fade-in-up">
-              Currently working as a Founding Engineer, I’ve led the development of complete platforms across web, mobile, and backend, turning ideas into live, revenue-generating products. I focus on solving real business problems through engineering — whether it's designing scalable systems, improving performance, or enabling faster product iterations.
+              Currently working as a Founding Engineer, I’ve led the development of complete platforms across web, mobile, and backend, turning ideas into live, revenue-generating products. I enjoy solving real business problems through engineering, whether that’s designing scalable systems, improving performance, or speeding up product iterations.
             </p>
-
+            
             <p className="text-lg md:text-xl mb-4 text-text/90 animate-fade-in-up">
-              My work sits at the intersection of product, engineering, and user experience. I’ve contributed to growth, built systems that handle real-world scale, and introduced approaches like server-driven UI to accelerate experimentation.
+              My work sits at the intersection of product, engineering, and user experience. I’ve contributed to growth, built systems that handle real-world scale, and introduced approaches like server-driven UI to enable faster experimentation.
             </p>
             
             <p className="text-lg md:text-xl text-text/90 animate-fade-in-up">
-              I enjoy building things that make an impact — and I’m always looking to learn faster, think deeper, and push the boundaries of what’s possible.
+              I like building things that actually make an impact, and I’m always looking to learn faster, think deeper, and push what’s possible on the web.
             </p>
           </div>
         </div>
