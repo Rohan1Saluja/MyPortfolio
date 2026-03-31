@@ -18,7 +18,7 @@ const Banner: React.FC = () => {
 
       <h4 className="md:text-lg w-3/4 md:max-w-2/5 text-text-300 pointer-events-none animate-shimmer">
         Hi, I'm a product-focused Software Engineer working across frontend,
-        backend, and systems — turning ideas into real, high-impact products
+        backend, and systems. I turn ideas into real, high-impact products.
       </h4>
 
       <CustomButton className="animate-fade-in-up" onClick={handleScroll}>
