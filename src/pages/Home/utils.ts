@@ -2,41 +2,39 @@
 
 export const technologies = [
   {
-    category: "Frontend",
+    category: "Frontend Engineering",
     backgroundImage: "/backgrounds/frontend-bg.png",
     items: [
-      { name: "React.js", link: "https://react.dev/" },
+      { name: "React", link: "https://react.dev/" },
       { name: "Next.js", link: "https://nextjs.org/" },
+      { name: "React Native", link: "https://reactnative.dev/" },
       { name: "TypeScript", link: "https://www.typescriptlang.org/" },
       {
-        name: "JavaScript",
+        name: "JavaScript (ES6+)",
         link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
       },
-      { name: "Draft.js", link: "https://draftjs.org/" },
+      { name: "Server-Driven UI (SDUI)", link: "#" },
       { name: "Redux", link: "https://redux.js.org/" },
       {
         name: "Context API",
         link: "https://react.dev/learn/passing-data-deeply-with-context",
       },
       { name: "Tailwind CSS", link: "https://tailwindcss.com/" },
-      { name: "Material UI", link: "https://mui.com/" },
-      { name: "Framer Motion", link: "https://www.framer.com/motion/" },
-      { name: "Chart.js", link: "https://www.chartjs.org/" },
-      { name: "Nivo", link: "https://nivo.rocks/" },
       { name: "SASS", link: "https://sass-lang.com/" },
-      { name: "i18Nexus", link: "https://www.i18nexus.com/" },
     ],
   },
   {
-    category: "Backend",
+    category: "Backend & Systems",
     backgroundImage: "/backgrounds/backend-bg.png",
     items: [
       { name: "Node.js", link: "https://nodejs.org/" },
       { name: "Express.js", link: "https://expressjs.com/" },
-      { name: "REST API", link: "https://restfulapi.net/" },
+      { name: "REST API Design", link: "https://restfulapi.net/" },
+      { name: "PostgreSQL", link: "https://www.postgresql.org/docs/" },
       { name: "Supabase", link: "https://supabase.com/" },
-      { name: "SQL", link: "https://www.w3schools.com/sql/" },
       { name: "Docker", link: "https://www.docker.com/" },
+      { name: "System Design", link: "#" },
+      { name: "Real-time Systems", link: "#" },
     ],
   },
   {
@@ -53,28 +51,39 @@ export const technologies = [
     ],
   },
   {
-    category: "Tools & Methodologies",
+    category: "Tools, Performance & Practices",
     backgroundImage: "/backgrounds/tools-bg.png",
     items: [
       { name: "Git", link: "https://git-scm.com/doc" },
       { name: "Performance Optimization", link: "https://web.dev/fast/" },
       {
+        name: "Scalable Architecture",
+        link: "#",
+      },
+      {
         name: "Responsive UI Design",
         link: "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design",
       },
       {
-        name: "DOM Manipulation",
-        link: "https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model",
+        name: "API Design & Integration",
+        link: "#",
+      },
+      {
+        name: "AI Integration (RAG/CAG)",
+        link: "#",
       },
     ],
   },
 ];
 
+// ----------------------------------
+// ----------------------------------
+
 export const projects = [
   {
-    title: "Repair Booking",
-    image: "/previews/booking-preview.png",
-    link: "https://booking.repairable.no/",
+    title: "StyleZen",
+    image: "/previews/stylezen-preview.png",
+    link: "https://app.stylezen.co",
   },
   {
     title: "Recurrent Software",
@@ -85,6 +94,11 @@ export const projects = [
     title: "Repairable Community",
     image: "/previews/repairable-preview.png",
     link: "https://www.repairable.community/",
+  },
+  {
+    title: "Repair Booking",
+    image: "/previews/booking-preview.png",
+    link: "https://booking.repairable.no/",
   },
   {
     title: "Seamster Dashboard",
@@ -98,53 +112,53 @@ export const projects = [
 
 export const highlights = [
   {
-    title: "Dynamic Frontend Development",
+    title: "0 → 1 Product Engineering",
     description:
-      "Specialized in building scalable, customizable UIs using Next.js, React, and TypeScript — empowering businesses to adapt platforms to their unique workflows.",
+      "Built and launched complete platforms across web, mobile, and backend — turning ideas into live, revenue-generating products with full ownership of architecture and execution.",
   },
   {
-    title: "AI-Powered Solutions",
+    title: "Scalable Systems & Backend Architecture",
     description:
-      "Led the development of 'Ally,' an AI chat interface for a Healthcare SaaS platform, optimizing architecture and user experience via RAG vs CAG evaluation.",
+      "Designed backend systems for orders, payments, inventory, and real-time operations, ensuring reliability and performance during high-growth phases and traffic spikes.",
   },
   {
-    title: "End-to-End Product Development",
+    title: "Product Thinking & Growth Impact",
     description:
-      "Boosted monthly orders by 35% at Repairable and reduced server costs by 70% by building efficient client flows and cloud architectures.",
+      "Drove significant product growth by optimizing critical user flows like checkout, logistics, and operations through data-informed engineering decisions.",
   },
   {
-    title: "Backend API Engineering",
+    title: "Server-Driven UI (SDUI)",
     description:
-      "Developed high-performance Node.js APIs powering AI services and real-time client demos, ensuring low-latency communication and data integrity.",
+      "Introduced server-driven UI to decouple frontend and backend, enabling faster experimentation, dynamic UI updates, and quicker feature rollouts without app releases.",
   },
   {
-    title: "Strategic Collaboration",
+    title: "AI-Driven Experiences",
     description:
-      "Worked with senior engineers and clients to shape product roadmaps, optimize workflows, and implement secure Role-Based Access Control (RBAC).",
+      "Led development of AI-powered interfaces, including chat-based systems, while evaluating architectures like RAG vs CAG to balance performance and user experience.",
   },
   {
-    title: "Modern Tech Stack Expertise",
+    title: "Full-Stack Execution",
     description:
-      "Proficient with ReactJS, NextJS, NodeJS, TypeScript, TailwindCSS, Docker, Supabase, SQL, and scalable backend systems.",
+      "Work across the stack — from crafting responsive, high-quality frontends to building performant Node.js APIs and scalable backend services.",
   },
   {
-    title: "Healthcare Dashboard Project",
+    title: "Performance & Reliability",
     description:
-      "Built a real-time monitoring dashboard for patient health analytics, integrating dynamic visualizations and responsive UI elements.",
+      "Optimized systems to handle real-world scale, including managing high traffic spikes while maintaining low latency and seamless user experience.",
   },
   {
-    title: "Crypto Market Analyzer",
+    title: "Cost Optimization & Efficiency",
     description:
-      "Developed a crypto analysis app using CoinGecko API and Trading View Widgets, allowing users to explore fundamental metrics with ease.",
+      "Reduced infrastructure costs significantly by designing efficient cloud architectures and distributing workloads across optimized services.",
   },
   {
-    title: "Performance & Optimization",
+    title: "Collaboration & Technical Leadership",
     description:
-      "Experienced in optimizing frontend and backend performance — reducing load times, improving responsiveness, and ensuring seamless UX.",
+      "Partner closely with founders, stakeholders, and engineers to drive product direction, make architectural decisions, and ensure high-quality execution.",
   },
   {
-    title: "Continuous Learning & Certifications",
+    title: "Modern Tech Stack",
     description:
-      "Certified in 'Introduction to Programming with C' (NPTEL) and 'React Development' (Internshala Trainings), always staying updated with emerging tech trends.",
+      "Experienced with React, Next.js, TypeScript, Node.js, React Native, Tailwind, Docker, Supabase, PostgreSQL, and building scalable production systems.",
   },
 ];
