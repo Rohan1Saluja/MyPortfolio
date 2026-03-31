@@ -65,23 +65,24 @@ const About: React.FC = () => {
           </div>
           <div className="text-center md:text-left flex-grow max-w-2xl">
             <h3 className="text-xl md:text-2xl font-semibold mb-4 animate-fade-in-up">
-              I'm Rohan Saluja
-            </h3>
-            <p className="text-lg md:text-xl mb-4 text-text/90 animate-fade-in-up">
-              An AI Frontend Engineer passionate about crafting modern,
-              responsive, and user-first web experiences.
-            </p>
-            <p className="text-lg md:text-xl mb-4 text-text/90 animate-fade-in-up">
-              I bring ideas to life through clean, scalable code and thoughtful
-              design, turning complex challenges into simple, intuitive
-              products. From dynamic platforms to AI-driven solutions, I focus
-              on building interfaces that not only look great but truly make an
-              impact.
-            </p>
-            <p className="text-lg md:text-xl text-text/90 animate-fade-in-up">
-              I'm always excited to collaborate, innovate, and push the
-              boundaries of what's possible on the web.
-            </p>
+  I'm Rohan Saluja
+</h3>
+
+<p className="text-lg md:text-xl mb-4 text-text/90 animate-fade-in-up">
+  A product-focused Software Engineer who builds and scales digital products end-to-end — from intuitive user experiences to robust backend systems.
+</p>
+
+<p className="text-lg md:text-xl mb-4 text-text/90 animate-fade-in-up">
+  Currently working as a Founding Engineer, I’ve led the development of complete platforms across web, mobile, and backend, turning ideas into live, revenue-generating products. I focus on solving real business problems through engineering — whether it's designing scalable systems, improving performance, or enabling faster product iterations.
+</p>
+
+<p className="text-lg md:text-xl mb-4 text-text/90 animate-fade-in-up">
+  My work sits at the intersection of product, engineering, and user experience. I’ve contributed to growth, built systems that handle real-world scale, and introduced approaches like server-driven UI to accelerate experimentation.
+</p>
+
+<p className="text-lg md:text-xl text-text/90 animate-fade-in-up">
+  I enjoy building things that make an impact — and I’m always looking to learn faster, think deeper, and push the boundaries of what’s possible.
+</p>
           </div>
         </div>
       </div>
