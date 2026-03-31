@@ -31,10 +31,20 @@ export const technologies = [
       { name: "Express.js", link: "https://expressjs.com/" },
       { name: "REST API Design", link: "https://restfulapi.net/" },
       { name: "PostgreSQL", link: "https://www.postgresql.org/docs/" },
-      { name: "Supabase", link: "https://supabase.com/" },
-      { name: "Docker", link: "https://www.docker.com/" },
-      { name: "System Design", link: "#" },
+      { name: "Database Design", link: "#" },
       { name: "Real-time Systems", link: "#" },
+      { name: "System Design", link: "#" },
+    ],
+  },
+  {
+    category: "Cloud & DevOps",
+    backgroundImage: "/backgrounds/backend-bg.png",
+    items: [
+      { name: "Google Cloud (GCP)", link: "https://cloud.google.com/" },
+      { name: "Docker", link: "https://www.docker.com/" },
+      { name: "CI/CD & Deployments", link: "#" },
+      { name: "Scalable Infrastructure", link: "#" },
+      { name: "Cost Optimization", link: "#" },
     ],
   },
   {
@@ -51,26 +61,18 @@ export const technologies = [
     ],
   },
   {
-    category: "Tools, Performance & Practices",
+    category: "Practices & Performance",
     backgroundImage: "/backgrounds/tools-bg.png",
     items: [
       { name: "Git", link: "https://git-scm.com/doc" },
       { name: "Performance Optimization", link: "https://web.dev/fast/" },
       {
-        name: "Scalable Architecture",
+        name: "API Design & Integration",
         link: "#",
       },
       {
         name: "Responsive UI Design",
         link: "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design",
-      },
-      {
-        name: "API Design & Integration",
-        link: "#",
-      },
-      {
-        name: "AI Integration (RAG/CAG)",
-        link: "#",
       },
     ],
   },
