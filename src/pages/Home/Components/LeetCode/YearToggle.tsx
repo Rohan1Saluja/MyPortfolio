@@ -34,7 +34,8 @@ const YearToggle: React.FC<YearToggleProps> = ({
                   hover:text-text-200
                 `
             }
-            disabled:cursor-wait
+            disabled:opacity-70
+            hover:cursor-pointer
           `}
         >
           {year}

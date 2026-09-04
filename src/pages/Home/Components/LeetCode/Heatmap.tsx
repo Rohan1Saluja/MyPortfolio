@@ -49,7 +49,7 @@ const LeetCodeHeatmap: React.FC<LeetCodeHeatmapProps> = ({
           ${loading ? "opacity-40" : "opacity-100"}
         `}
       >
-        <div className="overflow-x-auto pb-2">
+        <div className="overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           <div className="flex w-full min-w-[760px] gap-2">
             <WeekdayLabels />
 
