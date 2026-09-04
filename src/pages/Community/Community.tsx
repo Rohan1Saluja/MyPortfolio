@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import EventCard from "../../components/Cards/EventCard";
+import EventCard from "./Components/EventCard";
 import useApiCallhook from "../../hooks/useApiCallhook";
 import { getCommunityMeetups } from "../../api/events";
 

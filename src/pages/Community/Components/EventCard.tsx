@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { slugify } from "../../utils/utils";
+import { slugify } from "../../../utils/text";
 
 interface EventCardModel {
   title: string;

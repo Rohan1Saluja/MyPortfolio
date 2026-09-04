@@ -1,5 +1,5 @@
 import React from "react";
-import { EventSummaryModel } from "../../interfaces/common.model";
+import { EventSummaryModel } from "../../../interfaces/common.model";
 import { motion } from "framer-motion";
 
 interface Props {

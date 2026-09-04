@@ -2,9 +2,9 @@ import React from "react";
 import useApiCallhook from "../../../hooks/useApiCallhook";
 import { getCommunityMeetupsSummary } from "../../../api/events";
 import { EventSummaryModel } from "../../../interfaces/common.model";
-import EventSummaryCard from "../../../components/Cards/EventSummaryCard";
+import EventSummaryCard from "../Components/EventSummaryCard";
 import { useNavigate } from "react-router-dom";
-import { slugify } from "../../../utils/utils";
+import { slugify } from "../../../utils/text";
 
 const EventsOverview: React.FC = () => {
   const navigate = useNavigate();
