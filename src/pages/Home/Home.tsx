@@ -5,22 +5,29 @@ import TechStack from "./Sections/TechStack";
 import Folio from "./Sections/Folio";
 import EventsOverview from "./Sections/EventsOverview";
 import Highlights from "./Sections/Highlights";
-import FiverrGig from "./Sections/FiverrGig";
-import Freya from "./Sections/Freya";
 
 const Home = () => {
   return (
-    <section className="overflow-x-hidden">
+    <main className="overflow-x-hidden">
       <Banner />
-      <About />
-      <TechStack />
+
+      {/* Proof before biography */}
       <Highlights />
+
+      {/* What I've actually built */}
       <Folio />
-      {/* <Freya /> */}
-      {/* <FiverrGig /> */}
+
+      {/* Engineering capabilities */}
+      <TechStack />
+
+      {/* Personal context */}
+      <About />
+
+      {/* Community / personality */}
       <EventsOverview />
+
       <Contact />
-    </section>
+    </main>
   );
 };
 

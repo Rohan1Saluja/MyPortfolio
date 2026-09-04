@@ -1,89 +1,121 @@
 import React from "react";
+import { motion } from "framer-motion";
+
 import MyPixarArt from "../../../assets/logos/PixarArt.jpg";
 import { Instagram, LinkedIn, X } from "../../../assets/icons";
-import { motion } from "framer-motion";
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="py-16 md:py-24 px-4 md:px-10">
-      {" "}
-      {/* Section padding & background */}
-      <div className="container mx-auto px-4 max-w-4/5">
-        <h2 className="text-3xl md:text-4xl font-semibold mb-12 animate-fade-in">
-          About Me
-        </h2>
-        <div className="flex flex-col md:flex-row items-center md:items-start gap-10 md:gap-16">
-          <div className="flex-shrink-0">
-            <motion.div
-              className="w-48 h-48 md:w-56 md:h-56 rounded-full border-2 border-primary p-1 overflow-hidden shadow-lg"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            >
+    <section
+      id="about"
+      className="px-6 py-14 md:px-10 md:py-20 border-t border-secondary-500/15"
+    >
+      <div className="max-w-6xl mx-auto">
+        <div className="max-w-2xl mb-12 md:mb-16">
+          <p className="text-sm uppercase tracking-[0.2em] text-primary mb-3">
+            About
+          </p>
+
+          <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-text-200">
+            I like owning the messy middle between an idea and production.
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] lg:grid-cols-[320px_1fr] gap-10 md:gap-16 lg:gap-20 items-start">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="overflow-hidden rounded-2xl border border-secondary-500/20">
               <img
                 src={MyPixarArt}
-                alt="Stylized picture of Rohan Saluja"
-                className="w-full h-full object-cover rounded-full object-top"
-                width="224"
-                height="224"
+                alt="Stylized portrait of Rohan Saluja"
+                className="w-full aspect-square object-cover object-top"
+                width="320"
+                height="320"
               />
-            </motion.div>
-            <motion.div
-              className="flex justify-center mt-4 space-x-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            >
+            </div>
+
+            <div className="flex items-center gap-5 mt-5">
               <a
                 href="https://www.linkedin.com/in/rohansaluja"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:text-primary-dark transition-colors"
+                className="text-primary hover:opacity-70 transition-opacity"
                 aria-label="LinkedIn"
               >
                 <LinkedIn />
               </a>
+
               <a
                 href="https://twitter.com/rohan1saluja"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:text-primary-dark transition-colors"
-                aria-label="X (formerly Twitter)"
+                className="text-primary hover:opacity-70 transition-opacity"
+                aria-label="X"
               >
                 <X />
               </a>
+
               <a
                 href="https://www.instagram.com/rohansalujamusic"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:text-primary-dark transition-colors"
+                className="text-primary hover:opacity-70 transition-opacity"
                 aria-label="Instagram"
               >
                 <Instagram />
               </a>
-            </motion.div>
-          </div>
-          <div className="text-center md:text-left flex-grow max-w-2xl">
-            <h3 className="text-xl md:text-2xl font-semibold mb-4 animate-fade-in-up">
-              I'm Rohan Saluja
-            </h3>
-            
-            <p className="text-lg md:text-xl mb-4 text-text/90 animate-fade-in-up">
-              I’m a product-focused Software Engineer who builds and scales digital products end to end, from intuitive user experiences to reliable backend systems.
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.55, delay: 0.05 }}
+            className="max-w-3xl"
+          >
+            <p className="text-xl md:text-2xl leading-relaxed text-text-200">
+              I'm Rohan, a software engineer who enjoys working across product,
+              frontend, backend, mobile, and infrastructure.
             </p>
-            
-            <p className="text-lg md:text-xl mb-4 text-text/90 animate-fade-in-up">
-              Currently working as a Founding Engineer, I’ve led the development of complete platforms across web, mobile, and backend, turning ideas into live, revenue-generating products. I enjoy solving real business problems through engineering, whether that’s designing scalable systems, improving performance, or speeding up product iterations.
-            </p>
-            
-            <p className="text-lg md:text-xl mb-4 text-text/90 animate-fade-in-up">
-              My work sits at the intersection of product, engineering, and user experience. I’ve contributed to growth, built systems that handle real-world scale, and introduced approaches like server-driven UI to enable faster experimentation.
-            </p>
-            
-            <p className="text-lg md:text-xl text-text/90 animate-fade-in-up">
-              I like building things that actually make an impact, and I’m always looking to learn faster, think deeper, and push what’s possible on the web.
-            </p>
-          </div>
+
+            <div className="mt-7 space-y-6 text-base md:text-lg leading-relaxed text-text-300">
+              <p>
+                Over the last few years, I've worked in startup environments
+                where building a product often meant moving between product
+                decisions, user experiences, APIs, data models, deployments,
+                debugging, and production operations.
+              </p>
+
+              <p>
+                My work has spanned quick-commerce, logistics, AI-powered
+                healthcare, enterprise software, 3D experiences, media
+                platforms, and cloud infrastructure.
+              </p>
+
+              <p>
+                What interests me most is engineering that creates leverage:
+                helping teams ship faster, making systems more reliable,
+                reducing operational complexity, and building experiences that
+                genuinely improve the product behind them.
+              </p>
+            </div>
+
+            <div className="mt-10 pt-7 border-t border-secondary-500/20">
+              <p className="text-sm uppercase tracking-[0.18em] text-text-300 mb-3">
+                Outside engineering
+              </p>
+
+              <p className="text-base md:text-lg leading-relaxed text-text-300">
+                I also spend time around music, technology communities, and
+                meeting people who enjoy building ambitious things.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

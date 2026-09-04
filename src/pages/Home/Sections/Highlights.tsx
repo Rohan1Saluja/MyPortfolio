@@ -1,82 +1,54 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { highlights } from "../utils";
-
-const fadeInLeft = {
-  hidden: { opacity: 0, x: -100 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.6 } },
-};
-
-const fadeInRight = {
-  hidden: { opacity: 0, x: 100 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.6 } },
-};
+import { impact } from "../utils";
 
 const Highlights = () => {
   return (
-    <section id="highlights" className="my-16 flex flex-col items-center">
-      {/* Catchy Heading */}
-      <h2 className="text-3xl font-semibold text-center mb-8 text-foreground">
-        Empowering Solutions, One Highlight at a Time
-      </h2>
+    <section
+      id="highlights"
+      className="px-6 py-14 md:px-10 md:py-20 border-y border-secondary-500/15"
+    >
+      <div className="max-w-6xl mx-auto">
+        <div className="max-w-2xl mb-12 md:mb-16">
+          <p className="text-sm uppercase tracking-[0.2em] text-primary mb-3">
+            Production impact
+          </p>
 
-      <div className="max-w-6xl w-full px-4 grid grid-cols-1 md:grid-cols-2 gap-8 relative text-text-200">
-        {/* Vertical separator */}
-        <div className="hidden md:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-4/5 w-px bg-accent-300/20 rounded-xl animate-pulse" />
+          <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-text-200">
+            Engineering measured beyond commits.
+          </h2>
 
-        <div className="flex flex-col gap-8">
-          {highlights
-            .filter((_, index) => index % 2 === 0)
-            .map((item, idx) => (
-              <motion.div
-                key={idx}
-                variants={{
-                  hidden: { opacity: 0, x: -100 },
-                  show: {
-                    opacity: 1,
-                    x: 0,
-                    transition: { duration: 0.6, delay: idx * 0.2 },
-                  },
-                }}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                className="p-6 rounded-lg shadow-md bg-card"
-              >
-                <p className="text-lg text-foreground">
-                  <span className="font-semibold">{item.title}: </span>
-                  {item.description}
-                </p>
-              </motion.div>
-            ))}
+          <p className="mt-4 text-text-300 text-lg leading-relaxed">
+            A few numbers from products and systems I've helped build, operate,
+            and scale.
+          </p>
         </div>
 
-        <div className="flex flex-col gap-8">
-          {highlights
-            .filter((_, index) => index % 2 !== 0)
-            .map((item, idx) => (
-              <motion.div
-                key={idx}
-                variants={{
-                  hidden: { opacity: 0, x: 100 },
-                  show: {
-                    opacity: 1,
-                    x: 0,
-                    transition: { duration: 0.6, delay: idx * 0.2 },
-                  },
-                }}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                className="p-6 rounded-lg shadow-md bg-card"
-              >
-                <p className="text-lg text-foreground">
-                  <span className="font-semibold">{item.title}: </span>
-                  {item.description}
-                </p>
-              </motion.div>
-            ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 border-t border-l border-secondary-500/20">
+          {impact.map((item, index) => (
+            <motion.div
+              key={item.label}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{
+                duration: 0.45,
+                delay: index * 0.06,
+              }}
+              className="min-h-[190px] p-6 border-r border-b border-secondary-500/20"
+            >
+              <p className="text-2xl md:text-3xl font-semibold text-primary">
+                {item.value}
+              </p>
+
+              <h3 className="mt-4 font-medium text-text-200">{item.label}</h3>
+
+              <p className="mt-2 text-sm leading-relaxed text-text-300">
+                {item.description}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
