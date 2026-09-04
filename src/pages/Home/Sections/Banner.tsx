@@ -27,7 +27,7 @@ const Banner: React.FC = () => {
 
           <p className="mt-7 max-w-2xl text-base sm:text-lg md:text-xl leading-relaxed text-text-300 animate-fade-in-up">
             I'm Rohan Saluja, a software engineer working across web, mobile,
-            backend, infrastructure, and product architecture — building systems
+            backend, infrastructure, and product architecture, building systems
             that go from idea to production and scale with the businesses behind
             them.
           </p>
