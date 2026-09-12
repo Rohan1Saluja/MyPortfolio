@@ -5,6 +5,7 @@ import useLeetCodeActivity from "../../../../hooks/useLeetCodeActivity";
 import RecentSubmissions from "./RecentSubmissions";
 import SolvedBreakdown from "./SolvedBreakdown";
 import Badges from "./Badges";
+import Stats from "./Stats";
 
 const LeetCodeActivity: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -67,6 +68,8 @@ const LeetCodeActivity: React.FC = () => {
           </a>
         )}
       </div>
+
+      <Stats stats={data.stats} year={selectedYear} />
 
       <div className="mt-8 grid gap-5 lg:grid-cols-2">
         <SolvedBreakdown
