@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { LeetCodeData, Submission } from "../interfaces/leetcode.model";
+import { LeetCodeProfile, Submission } from "../interfaces/leetcode.model";
 import { getLeetCodeActivity } from "../api/leetcode";
 
 interface UseLeetCodeActivityResult {
-  data: LeetCodeData | null;
+  data: LeetCodeProfile | null;
   submissions: Submission[];
   loading: boolean;
   error: boolean;
@@ -15,7 +15,7 @@ const useLeetCodeActivity = (
 ): UseLeetCodeActivityResult => {
   const currentYear = new Date().getFullYear();
 
-  const [data, setData] = useState<LeetCodeData | null>(null);
+  const [data, setData] = useState<LeetCodeProfile | null>(null);
 
   const [submissions, setSubmissions] = useState<Submission[]>([]);
 
