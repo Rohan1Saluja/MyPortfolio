@@ -4,6 +4,7 @@ import LeetCodeStats from "./Stats";
 import useLeetCodeActivity from "../../../../hooks/useLeetCodeActivity";
 import RecentSubmissions from "./RecentSubmissions";
 import SolvedBreakdown from "./SolvedBreakdown";
+import Badges from "./Badges";
 
 const LeetCodeActivity: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -52,34 +53,44 @@ const LeetCodeActivity: React.FC = () => {
             href={`https://leetcode.com/u/${data.username}/`}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900/50 px-4 py-2 transition-all duration-300 hover:-translate-y-0.5 hover:border-neutral-700 hover:bg-neutral-900"
+            className="group flex shrink-0 items-center gap-2 rounded-full border border-neutral-800 bg-neutral-950/50 px-3.5 py-2 transition-all duration-300 hover:-translate-y-0.5 hover:border-neutral-700 hover:bg-neutral-900/70"
           >
-            <span className="text-xs text-neutral-500">Rank</span>
+            <span className="text-xs text-neutral-600">Rank</span>
 
-            <span className="text-sm font-semibold text-neutral-200">
+            <span className="text-sm font-medium tabular-nums text-neutral-300">
               #{data.ranking.toLocaleString()}
             </span>
 
-            <span className="text-neutral-600 transition-transform duration-300 group-hover:translate-x-0.5">
+            <span className="text-xs text-neutral-600 transition-transform duration-200 group-hover:translate-x-0.5">
               ↗
             </span>
           </a>
         )}
       </div>
 
-      <SolvedBreakdown
-        easy={data.stats.easySolved}
-        medium={data.stats.mediumSolved}
-        hard={data.stats.hardSolved}
-      />
+      <div className="mt-8 grid gap-5 lg:grid-cols-2">
+        <SolvedBreakdown
+          totalSolved={data.stats.totalSolved}
+          totalProblems={data.stats.totalProblems}
+          easySolved={data.stats.easySolved}
+          totalEasy={data.stats.totalEasy}
+          mediumSolved={data.stats.mediumSolved}
+          totalMedium={data.stats.totalMedium}
+          hardSolved={data.stats.hardSolved}
+          totalHard={data.stats.totalHard}
+        />
+
+        <Badges badges={data.badges ?? []} />
+      </div>
 
       <LeetCodeHeatmap
-        submissions={submissions}
+        submissions={data.submissions}
         selectedYear={selectedYear}
-        years={years}
+        years={data.activeYears}
         loading={loading}
         onYearChange={setSelectedYear}
       />
+
       <RecentSubmissions submissions={data.recentSubmissions ?? []} />
     </div>
   );
