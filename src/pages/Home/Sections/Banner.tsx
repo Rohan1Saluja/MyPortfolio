@@ -21,7 +21,7 @@ const Banner: React.FC = () => {
             Product Engineer · Frontend · Backend · Systems
           </p>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-semibold leading-[1.05] tracking-tight text-text-200 animate-fade-in">
+          <h1 className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-semibold leading-[1.05] tracking-tight text-text-200 animate-fade-in">
             I build products that survive contact with the real world.
           </h1>
 

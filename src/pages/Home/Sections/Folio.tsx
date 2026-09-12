@@ -5,7 +5,7 @@ import { FiArrowRight } from "react-icons/fi";
 
 const Folio: React.FC = () => {
   return (
-    <section id="folio" className="px-6 py-14 md:px-10 md:py-20">
+    <section id="folio" className="px-6 pt-14 md:px-10 md:pt-20">
       <div className="max-w-6xl mx-auto">
         <div className="max-w-3xl mb-14 md:mb-20">
           <p className="text-sm uppercase tracking-[0.2em] text-primary mb-3">

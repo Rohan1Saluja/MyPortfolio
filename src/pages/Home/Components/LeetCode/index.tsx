@@ -1,19 +1,18 @@
 import { useState } from "react";
 import LeetCodeHeatmap from "./Heatmap";
-import LeetCodeStats from "./Stats";
 import useLeetCodeActivity from "../../../../hooks/useLeetCodeActivity";
 import RecentSubmissions from "./RecentSubmissions";
 import SolvedBreakdown from "./SolvedBreakdown";
 import Badges from "./Badges";
 import Stats from "./Stats";
+import { capabilities } from "../../utils";
 
 const LeetCodeActivity: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   const [selectedYear, setSelectedYear] = useState(currentYear);
 
-  const { data, submissions, loading, error } =
-    useLeetCodeActivity(selectedYear);
+  const { data, loading, error } = useLeetCodeActivity(selectedYear);
 
   if (loading && !data) {
     return (
@@ -31,13 +30,13 @@ const LeetCodeActivity: React.FC = () => {
     return null;
   }
 
-  const years = [...data.activeYears].sort((a, b) => b - a);
-
   return (
     <div className="border-x border-b border-secondary-500/20 p-7 md:p-8">
       <div className="mb-6 flex items-center justify-between">
         <div className="max-w-xl">
-          <span className="text-sm text-text-300">06</span>
+          <span className="text-sm text-text-300">
+            {String(capabilities.length + 1).padStart(2, "0")}
+          </span>
 
           <h3 className="mt-5 text-xl font-semibold text-text-200 md:text-2xl">
             Problem solving

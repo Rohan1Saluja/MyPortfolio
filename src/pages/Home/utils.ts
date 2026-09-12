@@ -2,7 +2,7 @@ export const capabilities = [
   {
     category: "Product Engineering",
     description:
-      "Building customer-facing products across web and mobile, from idea to production.",
+      "Building and owning customer-facing products across web and mobile, from idea to production.",
     items: [
       "React",
       "Next.js",
@@ -13,25 +13,38 @@ export const capabilities = [
     ],
   },
   {
-    category: "Backend & Systems",
+    category: "Backend & Data",
     description:
-      "Designing APIs, data flows, and services behind production products.",
+      "Designing APIs, business logic, data models, and services behind production products.",
     items: [
       "Node.js",
       "Express.js",
       "FastAPI",
       "PostgreSQL",
       "Redis",
-      "REST APIs",
+      "RabbitMQ",
+    ],
+  },
+  {
+    category: "Systems Architecture",
+    description:
+      "Designing scalable application patterns for complex product and platform workflows.",
+    items: [
+      "Multi-Tenant Systems",
+      "Server-Driven UI",
+      "RBAC",
+      "Database Design",
+      "API Design",
+      "Workflow Automation",
     ],
   },
   {
     category: "Cloud & Reliability",
     description:
-      "Shipping, operating, debugging, and optimizing systems in production.",
+      "Shipping and operating reliable systems under real production traffic and growth.",
     items: [
-      "Docker",
       "GCP",
+      "Docker",
       "Cloud Run",
       "NGINX",
       "CI/CD",
@@ -39,28 +52,29 @@ export const capabilities = [
     ],
   },
   {
-    category: "Architecture",
+    category: "Scale & Infrastructure",
     description:
-      "Patterns I've used to solve product and platform problems at scale.",
+      "Improving system performance, traffic handling, and infrastructure as products scale.",
     items: [
-      "Server-Driven UI",
-      "RBAC",
-      "Workflow Automation",
-      "Event Tracking",
+      "Caching",
       "Load Balancing",
-      "System Design",
+      "Structured Logging",
+      "Event Tracking",
+      "Service Integrations",
+      "Infrastructure Optimization",
     ],
   },
   {
     category: "AI & Applied Engineering",
     description:
-      "Integrating AI capabilities into real product experiences and prototypes.",
+      "Building AI-assisted experiences and technical prototypes around emerging capabilities.",
     items: [
       "LLM Integration",
-      "RAG / CAG Concepts",
+      "RAG / CAG",
       "Prompt Engineering",
       "Inference APIs",
       "Python",
+      "AI-assisted Workflows",
     ],
   },
 ];

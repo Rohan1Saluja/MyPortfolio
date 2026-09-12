@@ -26,27 +26,29 @@ const Header = () => {
         className="rounded-full w-10 h-10 hover:cursor-pointer"
         onClick={() => navigate("/")}
       />
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2 sm:gap-4">
         {tabs.map((tab: any, index: number) => (
           <span
             key={`${tab.name}-${index}`}
-            className="rounded-xl text-xs sm:text-base shadow-sm text-text-200 hover:text-text-100 transition-all delay-100 px-3 py-2 active:translate-y-0.5 hover:cursor-pointer"
+            className="shrink-0 whitespace-nowrap rounded-xl px-2 py-2 text-xs text-text-200 shadow-sm transition-all delay-100 hover:cursor-pointer hover:text-text-100 active:translate-y-0.5 sm:px-3 sm:text-base"
             onClick={() => navigate(tab.route)}
           >
             {tab.name}
           </span>
         ))}
+
         {location.pathname === "/" && (
           <span
-            className="rounded-xl text-xs sm:text-base shadow-sm text-text-200 hover:text-text-100 transition-all delay-100 px-3 py-2 active:translate-y-0.5 hover:cursor-pointer"
+            className="shrink-0 whitespace-nowrap rounded-xl px-2 py-2 text-xs text-text-200 shadow-sm transition-all delay-100 hover:cursor-pointer hover:text-text-100 active:translate-y-0.5 sm:px-3 sm:text-base"
             onClick={() => handleScroll("#contact")}
           >
             Get In Touch
           </span>
         )}
+
         <CustomButton
           size="small"
-          className="!mx-2"
+          className="!mx-1 shrink-0 whitespace-nowrap sm:!mx-2"
           onClick={() =>
             window.open(
               "https://drive.google.com/file/d/1C9a5USWsB-XukHan4Ja3LQZnhg9KqcLM/view?usp=drive_link",
@@ -54,7 +56,8 @@ const Header = () => {
             )
           }
         >
-          <AiOutlineDownload className="mr-1" /> Resume
+          <AiOutlineDownload className="mr-1" />
+          Resume
         </CustomButton>
       </div>
     </header>
