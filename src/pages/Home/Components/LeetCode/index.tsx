@@ -32,17 +32,17 @@ const LeetCodeActivity: React.FC = () => {
 
   return (
     <div className="border-x border-b border-secondary-500/20 p-7 md:p-8">
-      <div className="mb-6 flex items-center justify-between">
+      <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div className="max-w-xl">
           <span className="text-sm text-text-300">
             {String(capabilities.length + 1).padStart(2, "0")}
           </span>
 
-          <h3 className="mt-5 text-xl font-semibold text-text-200 md:text-2xl">
+          <h3 className="mt-4 text-xl font-semibold text-text-200 md:mt-5 md:text-2xl">
             Problem solving
           </h3>
 
-          <p className="mt-3 leading-relaxed text-text-300">
+          <p className="mt-3 max-w-lg text-sm leading-relaxed text-text-300 sm:text-base">
             Consistent algorithmic problem solving across data structures,
             algorithms, and competitive programming.
           </p>
@@ -53,7 +53,7 @@ const LeetCodeActivity: React.FC = () => {
             href={`https://leetcode.com/u/${data.username}/`}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex shrink-0 items-center gap-2 rounded-full border border-neutral-800 bg-neutral-950/50 px-3.5 py-2 transition-all duration-300 hover:-translate-y-0.5 hover:border-neutral-700 hover:bg-neutral-900/70"
+            className="group flex w-fit shrink-0 items-center gap-2 rounded-full border border-neutral-800 bg-neutral-950/50 px-3.5 py-2 transition-all duration-300 hover:-translate-y-0.5 hover:border-neutral-700 hover:bg-neutral-900/70"
           >
             <span className="text-xs text-neutral-600">Rank</span>
 
