@@ -30,7 +30,7 @@ const Header = () => {
         {tabs.map((tab: any, index: number) => (
           <span
             key={`${tab.name}-${index}`}
-            className="rounded-xl shadow-sm text-text-200 hover:text-text-100 transition-all delay-100 px-3 py-2 active:translate-y-0.5 hover:cursor-pointer"
+            className="rounded-xl text-xs sm:text-base shadow-sm text-text-200 hover:text-text-100 transition-all delay-100 px-3 py-2 active:translate-y-0.5 hover:cursor-pointer"
             onClick={() => navigate(tab.route)}
           >
             {tab.name}
@@ -38,7 +38,7 @@ const Header = () => {
         ))}
         {location.pathname === "/" && (
           <span
-            className="rounded-xl shadow-sm text-text-200 hover:text-text-100 transition-all delay-100 px-3 py-2 active:translate-y-0.5 hover:cursor-pointer"
+            className="rounded-xl text-xs sm:text-base shadow-sm text-text-200 hover:text-text-100 transition-all delay-100 px-3 py-2 active:translate-y-0.5 hover:cursor-pointer"
             onClick={() => handleScroll("#contact")}
           >
             Get In Touch
@@ -50,7 +50,7 @@ const Header = () => {
           onClick={() =>
             window.open(
               "https://drive.google.com/file/d/1C9a5USWsB-XukHan4Ja3LQZnhg9KqcLM/view?usp=drive_link",
-              "_blank"
+              "_blank",
             )
           }
         >
