@@ -143,7 +143,7 @@ export const projects = [
 
     metrics: [],
 
-    image: "https://image.thum.io/get/width/1200/crop/750/noanimate/https://calyrn.xyz",
+    image: "/previews/calyrn-preview.png",
     liveUrl: "https://calyrn.xyz",
     caseStudyUrl: null,
   },
@@ -169,7 +169,7 @@ export const projects = [
 
     metrics: [],
 
-    image: "https://image.thum.io/get/width/1200/crop/750/noanimate/https://m2kpackpro.in",
+    image: "/previews/m2k-packpro-preview.png",
     liveUrl: "https://m2kpackpro.in",
     caseStudyUrl: null,
   },
