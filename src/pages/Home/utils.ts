@@ -123,8 +123,60 @@ export const projects = [
   },
 
   {
-    id: "recurrent",
+    id: "calyrn",
     index: "02",
+    title: "Calyrn",
+    role: "Creator & Product Engineer",
+    period: "2026 - Present",
+    type: "Market Research Product",
+
+    description:
+      "Building a market research product designed to keep investigation context intact across assets, time horizons, and evolving watchlists.",
+
+    contributions: [
+      "Persistent market watch",
+      "OHLC & multi-horizon analysis",
+      "Cross-asset research flows",
+      "Product & interaction design",
+      "End-to-end product engineering",
+    ],
+
+    metrics: [],
+
+    image: null,
+    liveUrl: "https://calyrn.xyz",
+    caseStudyUrl: null,
+  },
+
+  {
+    id: "m2k-packpro",
+    index: "03",
+    title: "M2K PackPro",
+    role: "Freelance Software Engineer",
+    period: "Freelance",
+    type: "Business Website",
+
+    description:
+      "Designed and shipped a production website for M2K PackPro, giving the client's packaging business a clear, responsive web presence for customer discovery and enquiries.",
+
+    contributions: [
+      "Website architecture",
+      "Responsive frontend",
+      "Business-focused UX",
+      "Content presentation",
+      "Production deployment",
+    ],
+
+    metrics: [],
+
+    image: null,
+    liveUrl: "https://m2kpackpro.in",
+    caseStudyUrl: null,
+  },
+
+  {
+    id: "recurrent",
+    index: "04",
     title: "Recurrent Software",
     role: "Associate Software Engineer",
     period: "2024 - 2025",
@@ -150,7 +202,7 @@ export const projects = [
 
   {
     id: "repairable",
-    index: "03",
+    index: "05",
     title: "Repairable",
     role: "Software Developer Intern",
     period: "2023 - 2024",
@@ -183,7 +235,7 @@ export const projects = [
     ],
 
     image: "/previews/repairable-preview.png",
-    liveUrl: "https://www.repairable.community/",
+    liveUrl: null,
     caseStudyUrl: null,
   },
 ];
