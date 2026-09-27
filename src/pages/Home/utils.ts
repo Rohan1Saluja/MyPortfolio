@@ -143,7 +143,7 @@ export const projects = [
 
     metrics: [],
 
-    image: null,
+    image: "/previews/calyrn-preview.png",
     liveUrl: "https://calyrn.xyz",
     caseStudyUrl: null,
   },
@@ -169,7 +169,7 @@ export const projects = [
 
     metrics: [],
 
-    image: null,
+    image: "/previews/m2k-packpro-preview.png",
     liveUrl: "https://m2kpackpro.in",
     caseStudyUrl: null,
   },
