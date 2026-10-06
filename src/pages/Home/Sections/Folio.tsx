@@ -1,118 +1,77 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { projects } from "../utils";
 import { FiArrowRight } from "react-icons/fi";
+import Container from "../Components/Layout/Container";
+import SectionHeader from "../Components/Layout/SectionHeader";
+import { projects } from "../utils";
 
 const Folio: React.FC = () => {
+  const flagshipProjects = projects.slice(0, 3);
+  const supportingProjects = projects.slice(3);
+
   return (
-    <section id="folio" className="px-6 pt-14 md:px-10 md:pt-20">
-      <div className="max-w-6xl mx-auto">
-        <div className="max-w-3xl mb-14 md:mb-20">
-          <p className="text-sm uppercase tracking-[0.2em] text-primary mb-3">
-            Selected work
-          </p>
+    <section id="folio" className="section-space scroll-mt-20">
+      <Container>
+        <SectionHeader
+          index="01"
+          eyebrow="Selected work"
+          title="Products that show the range of the engineering."
+          description="Independent product work, client delivery, and production systems—presented by ownership and engineering scope rather than a wall of equal cards."
+        />
 
-          <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-text-200">
-            Products, systems, and problems I've worked on.
-          </h2>
-
-          <p className="mt-4 text-lg leading-relaxed text-text-300">
-            A selection of production work spanning product ownership, freelance
-            delivery, commerce, AI, logistics, enterprise software, and
-            infrastructure.
-          </p>
-        </div>
-
-        <div className="flex flex-col">
-          {projects.map((project, index) => {
-            const preview = (
-              <div className="overflow-hidden rounded-xl border border-secondary-500/20 bg-card">
-                {project.image ? (
-                  <img
-                    src={project.image}
-                    alt={`${project.title} preview`}
-                    className={`w-full aspect-[16/10] object-cover transition-transform duration-500 ${
-                      project.liveUrl ? "hover:scale-[1.02]" : ""
-                    }`}
-                  />
-                ) : (
-                  <div className="flex aspect-[16/10] w-full flex-col justify-between p-7 md:p-9">
-                    <span className="text-xs uppercase tracking-[0.2em] text-text-300">
-                      Live product
-                    </span>
-
-                    <div>
-                      <p className="text-3xl font-semibold tracking-tight text-text-200 md:text-4xl">
-                        {project.title}
-                      </p>
-                      <p className="mt-3 text-sm text-text-300">
-                        {project.type}
-                      </p>
-                    </div>
-
-                    <div className="h-px w-full bg-secondary-500/20" />
-                  </div>
-                )}
-              </div>
-            );
+        <div className="mt-16 border-t border-border lg:mt-20">
+          {flagshipProjects.map((project, index) => {
+            const reverse = index % 2 === 1;
 
             return (
-              <motion.article
+              <article
                 key={project.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{
-                  duration: 0.55,
-                  delay: index * 0.05,
-                }}
-                className="grid grid-cols-1 lg:grid-cols-[1fr_0.9fr] gap-8 lg:gap-14 py-12 md:py-16 border-t border-secondary-500/20"
+                className="grid gap-9 border-b border-border py-12 sm:py-16 lg:grid-cols-12 lg:gap-10 lg:py-20"
               >
-                <div>
-                  <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-text-300">
-                    <span>{project.index}</span>
-                    <span>·</span>
+                <div
+                  className={
+                    reverse
+                      ? "lg:order-2 lg:col-span-5 lg:col-start-8"
+                      : "lg:col-span-5"
+                  }
+                >
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs text-ink-muted">
+                    <span className="tabular-nums">{project.index}</span>
+                    <span aria-hidden="true">/</span>
                     <span>{project.type}</span>
-                    <span>·</span>
+                    <span aria-hidden="true">/</span>
                     <span>{project.period}</span>
                   </div>
 
-                  <h3 className="mt-5 text-3xl md:text-4xl font-semibold tracking-tight text-text-200">
+                  <h3 className="mt-5 text-4xl font-medium leading-none tracking-[-0.045em] text-ink sm:text-5xl">
                     {project.title}
                   </h3>
 
-                  <p className="mt-2 text-primary">{project.role}</p>
+                  <p className="mt-3 text-sm font-medium text-primary">
+                    {project.role}
+                  </p>
 
-                  <p className="mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-text-300">
+                  <p className="mt-7 max-w-xl text-base leading-7 text-ink-secondary sm:text-lg sm:leading-8">
                     {project.description}
                   </p>
 
-                  <div className="mt-8">
-                    <p className="text-xs uppercase tracking-[0.18em] text-text-300 mb-4">
-                      Engineering scope
-                    </p>
-
-                    <div className="flex flex-wrap gap-2">
-                      {project.contributions.map((contribution) => (
-                        <span
-                          key={contribution}
-                          className="px-3 py-2 text-sm rounded-md border border-secondary-500/25 text-text-200"
-                        >
-                          {contribution}
-                        </span>
-                      ))}
-                    </div>
+                  <div className="mt-8 grid gap-2 border-t border-border pt-6 sm:grid-cols-2">
+                    {project.contributions.map((contribution) => (
+                      <p
+                        key={contribution}
+                        className="text-sm leading-6 text-ink-secondary"
+                      >
+                        {contribution}
+                      </p>
+                    ))}
                   </div>
 
                   {project.metrics.length > 0 && (
-                    <div className="mt-8 flex flex-wrap gap-8">
+                    <div className="mt-8 flex flex-wrap gap-x-8 gap-y-5">
                       {project.metrics.map((metric) => (
                         <div key={metric.label}>
-                          <p className="text-2xl font-semibold text-text-200">
+                          <p className="text-2xl font-medium tracking-tight text-ink">
                             {metric.value}
                           </p>
-
-                          <p className="mt-1 text-sm text-text-300">
+                          <p className="mt-1 text-xs text-ink-muted">
                             {metric.label}
                           </p>
                         </div>
@@ -121,49 +80,121 @@ const Folio: React.FC = () => {
                   )}
 
                   {(project.liveUrl || project.caseStudyUrl) && (
-                    <div className="mt-9 flex flex-wrap gap-5">
+                    <div className="mt-9 flex flex-wrap gap-x-6 gap-y-3">
                       {project.liveUrl && (
                         <a
                           href={project.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-sm font-medium text-primary hover:opacity-80 transition-opacity flex items-center gap-1.5"
+                          className="group inline-flex items-center gap-2 border-b border-primary/50 pb-1 text-sm font-medium text-ink transition-colors hover:border-primary hover:text-primary"
                         >
-                          Visit product <FiArrowRight className="mt-0.5" />
+                          Visit product
+                          <FiArrowRight className="transition-transform group-hover:translate-x-1" />
                         </a>
                       )}
 
                       {project.caseStudyUrl && (
                         <a
                           href={project.caseStudyUrl}
-                          className="text-sm font-medium text-text-200 hover:text-primary transition-colors flex items-center gap-1.5"
+                          className="group inline-flex items-center gap-2 text-sm font-medium text-ink-secondary transition-colors hover:text-ink"
                         >
-                          View engineering story <FiArrowRight className="mt-0.5" />
+                          Engineering story
+                          <FiArrowRight className="transition-transform group-hover:translate-x-1" />
                         </a>
                       )}
                     </div>
                   )}
                 </div>
 
-                <div className="lg:flex lg:items-center">
+                <div
+                  className={
+                    reverse
+                      ? "lg:order-1 lg:col-span-7"
+                      : "lg:col-span-7"
+                  }
+                >
                   {project.liveUrl ? (
                     <a
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block w-full"
+                      className="group block overflow-hidden border border-border bg-surface"
                     >
-                      {preview}
+                      <img
+                        src={project.image}
+                        alt={`${project.title} product preview`}
+                        loading={index === 0 ? "eager" : "lazy"}
+                        className="aspect-[16/10] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.015]"
+                      />
                     </a>
                   ) : (
-                    <div className="w-full">{preview}</div>
+                    <div className="overflow-hidden border border-border bg-surface">
+                      <img
+                        src={project.image}
+                        alt={`${project.title} product preview`}
+                        loading="lazy"
+                        className="aspect-[16/10] w-full object-cover object-top"
+                      />
+                    </div>
                   )}
                 </div>
-              </motion.article>
+              </article>
             );
           })}
         </div>
-      </div>
+
+        {supportingProjects.length > 0 && (
+          <div className="mt-16 lg:mt-20">
+            <div className="flex items-end justify-between gap-6 border-b border-border pb-5">
+              <div>
+                <p className="eyebrow text-primary">Additional experience</p>
+                <h3 className="mt-3 text-2xl font-medium tracking-tight text-ink sm:text-3xl">
+                  Supporting production work.
+                </h3>
+              </div>
+              <p className="hidden max-w-sm text-right text-sm leading-6 text-ink-muted md:block">
+                Selected roles where the scope spans multiple product and
+                engineering concerns.
+              </p>
+            </div>
+
+            <div className="divide-y divide-border">
+              {supportingProjects.map((project) => (
+                <article
+                  key={project.id}
+                  className="grid gap-6 py-8 md:grid-cols-[10rem_1fr_auto] md:items-start md:gap-10"
+                >
+                  <div className="text-xs text-ink-muted">
+                    <p>{project.period}</p>
+                    <p className="mt-1">{project.type}</p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-xl font-medium tracking-tight text-ink">
+                      {project.title}
+                    </h4>
+                    <p className="mt-1 text-sm text-primary">{project.role}</p>
+                    <p className="mt-4 max-w-2xl leading-7 text-ink-secondary">
+                      {project.description}
+                    </p>
+                  </div>
+
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-ink-secondary transition-colors hover:text-primary"
+                    >
+                      Visit ↗
+                    </a>
+                  )}
+                </article>
+              ))}
+            </div>
+          </div>
+        )}
+      </Container>
     </section>
   );
 };

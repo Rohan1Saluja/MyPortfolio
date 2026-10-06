@@ -1,56 +1,54 @@
-"use client";
-
-import { motion } from "framer-motion";
+import Container from "../Components/Layout/Container";
+import SectionHeader from "../Components/Layout/SectionHeader";
 import { impact } from "../utils";
 
 const Highlights = () => {
+  const [primaryImpact, ...supportingImpact] = impact;
+
   return (
-    <section
-      id="highlights"
-      className="px-6 py-14 md:px-10 md:py-20 border-y border-secondary-500/15"
-    >
-      <div className="max-w-6xl mx-auto">
-        <div className="max-w-2xl mb-12 md:mb-16">
-          <p className="text-sm uppercase tracking-[0.2em] text-primary mb-3">
-            Production impact
-          </p>
+    <section id="highlights" className="section-space border-t border-border/70">
+      <Container>
+        <SectionHeader
+          index="02"
+          eyebrow="Production impact"
+          title="Evidence measured beyond commits."
+          description="A few numbers from products and systems I have helped build, operate, and scale."
+        />
 
-          <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-text-200">
-            Engineering measured beyond commits.
-          </h2>
+        <div className="mt-16 grid gap-12 border-t border-border pt-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20 lg:pt-14">
+          <div>
+            <p className="text-[clamp(4.5rem,10vw,8.5rem)] font-medium leading-none tracking-[-0.07em] text-primary">
+              {primaryImpact.value}
+            </p>
+            <h3 className="mt-5 max-w-sm text-xl font-medium tracking-tight text-ink sm:text-2xl">
+              {primaryImpact.label}
+            </h3>
+            <p className="mt-3 max-w-sm leading-7 text-ink-secondary">
+              {primaryImpact.description}
+            </p>
+          </div>
 
-          <p className="mt-4 text-text-300 text-lg leading-relaxed">
-            A few numbers from products and systems I've helped build, operate,
-            and scale.
-          </p>
+          <div className="divide-y divide-border border-y border-border">
+            {supportingImpact.map((item) => (
+              <div
+                key={item.label}
+                className="grid gap-3 py-6 sm:grid-cols-[8rem_1fr] sm:items-start sm:gap-8"
+              >
+                <p className="text-2xl font-medium tracking-[-0.03em] text-ink sm:text-3xl">
+                  {item.value}
+                </p>
+
+                <div>
+                  <h3 className="font-medium text-ink">{item.label}</h3>
+                  <p className="mt-1 text-sm leading-6 text-ink-secondary">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 border-t border-l border-secondary-500/20">
-          {impact.map((item, index) => (
-            <motion.div
-              key={item.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.4 }}
-              transition={{
-                duration: 0.45,
-                delay: index * 0.06,
-              }}
-              className="min-h-[190px] p-6 border-r border-b border-secondary-500/20"
-            >
-              <p className="text-2xl md:text-3xl font-semibold text-primary">
-                {item.value}
-              </p>
-
-              <h3 className="mt-4 font-medium text-text-200">{item.label}</h3>
-
-              <p className="mt-2 text-sm leading-relaxed text-text-300">
-                {item.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
-      </div>
+      </Container>
     </section>
   );
 };

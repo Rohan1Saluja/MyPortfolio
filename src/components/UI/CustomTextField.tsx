@@ -1,47 +1,43 @@
 import React from "react";
-import TextField, { TextFieldProps } from "@mui/material/TextField";
 import { styled } from "@mui/material/styles";
+import TextField, { TextFieldProps } from "@mui/material/TextField";
 
-// Styled MUI TextField
 const StyledMuiTextField = styled(TextField)(({ theme }) => ({
   "& .MuiOutlinedInput-root": {
-    backgroundColor: "transparent",
-    borderRadius: "12px",
-    transition: theme.transitions.create(["border-color", "box-shadow"]),
-    color: "var(--color-text)",
+    backgroundColor: "var(--color-surface)",
+    borderRadius: "2px",
+    transition: theme.transitions.create(["border-color", "background-color"]),
+    color: "var(--color-ink)",
     "& input, & textarea": {
-      padding: "14px 16px",
+      padding: "15px 16px",
     },
     "& .MuiOutlinedInput-notchedOutline": {
-      borderColor: "var(--color-primary-700)",
+      borderColor: "var(--color-border)",
       borderWidth: "1px",
     },
     "&:hover .MuiOutlinedInput-notchedOutline": {
-      borderColor: "var(--color-primary-500)",
+      borderColor: "var(--color-border-strong)",
+    },
+    "&.Mui-focused": {
+      backgroundColor: "var(--color-surface-raised)",
     },
     "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
       borderColor: "var(--color-primary)",
-    },
-    "&.Mui-disabled .MuiOutlinedInput-notchedOutline": {
-      borderColor: "var(--color-text-800)",
-    },
-    "&.Mui-disabled": {
-      color: "var(--color-text-700)",
-      WebkitTextFillColor: "var(--color-text-700)",
+      borderWidth: "1px",
     },
   },
   "& .MuiInputLabel-root": {
-    color: "var(--color-text-500)",
+    color: "var(--color-ink-muted)",
     "&.Mui-focused": {
       color: "var(--color-primary)",
     },
-    "&.Mui-disabled": {
-      color: "var(--color-text-700)",
-    },
+  },
+  "& .MuiFormHelperText-root": {
+    marginLeft: 0,
+    color: "var(--color-ink-muted)",
   },
 }));
 
-// Unified component
 interface CustomTextFieldProps extends Omit<TextFieldProps, "variant"> {
   textArea?: boolean;
   rows?: number;
@@ -53,7 +49,7 @@ const CustomTextField: React.FC<CustomTextFieldProps> = ({
   ...props
 }) => (
   <StyledMuiTextField
-    variant="outlined" // Specify the variant here
+    variant="outlined"
     multiline={textArea}
     rows={textArea ? rows : undefined}
     {...props}
