@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import LeetCodeActivity from "../Components/LeetCode";
 import Container from "../Components/Layout/Container";
 import SectionHeader from "../Components/Layout/SectionHeader";
@@ -19,8 +20,16 @@ const TechStack: React.FC = () => {
 
         <div className="mt-16 divide-y divide-border border-y border-border lg:ml-[11rem]">
           {capabilities.map((capability, index) => (
-            <article
+            <motion.article
               key={capability.category}
+              initial={{ opacity: 0, x: -18 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.045,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               className="grid gap-5 py-8 sm:py-10 lg:grid-cols-[3rem_14rem_1fr] lg:gap-8"
             >
               <span className="text-xs tabular-nums text-ink-muted">
@@ -44,7 +53,7 @@ const TechStack: React.FC = () => {
                   ))}
                 </div>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
 
