@@ -48,29 +48,8 @@ const TechStack: React.FC = () => {
           ))}
         </div>
 
-        <div className="mt-20 border-t border-border pt-14 sm:mt-24 sm:pt-16">
-          <div className="grid gap-6 lg:grid-cols-[11rem_1fr]">
-            <div className="flex items-start gap-3 pt-1 text-ink-muted">
-              <span className="text-xs tabular-nums">04</span>
-              <span className="eyebrow text-primary">Problem solving</span>
-            </div>
-
-            <div className="max-w-3xl">
-              <h3 className="text-[clamp(2rem,4.2vw,3.7rem)] font-medium leading-[1.02] tracking-[-0.04em] text-ink">
-                LeetCode, as a live engineering signal.
-              </h3>
-
-              <p className="body-large mt-5 max-w-2xl text-ink-secondary">
-                Beyond product work, I keep a consistent algorithmic practice.
-                The profile below is live: solved problems, activity, streak,
-                badges, and recent accepted submissions.
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-10 lg:ml-[11rem]">
-            <LeetCodeActivity />
-          </div>
+        <div className="mt-14 lg:ml-[11rem]">
+          <LeetCodeActivity />
         </div>
       </Container>
     </section>
