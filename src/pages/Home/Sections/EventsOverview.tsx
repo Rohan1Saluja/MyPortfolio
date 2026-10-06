@@ -26,6 +26,7 @@ const EventsOverview: React.FC = () => {
         <SectionHeader
           index="05"
           eyebrow="Community"
+          typewriterEyebrow
           title="The rooms I learn from outside the codebase."
           description="A small record of engineering, product, and technology communities I have spent time around."
         />

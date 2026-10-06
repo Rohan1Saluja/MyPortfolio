@@ -12,7 +12,19 @@ const Banner: React.FC = () => {
   };
 
   return (
-    <section className="border-b border-border/70">
+    <section className="relative overflow-hidden border-b border-border/70">
+      <motion.div
+        aria-hidden="true"
+        animate={{ x: [0, 18, -8, 0], y: [0, -12, 10, 0] }}
+        transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
+        className="pointer-events-none absolute -right-24 top-10 h-72 w-72 rounded-full bg-secondary-500/10 blur-3xl sm:h-96 sm:w-96"
+      />
+      <motion.div
+        aria-hidden="true"
+        animate={{ x: [0, -12, 8, 0], y: [0, 10, -8, 0] }}
+        transition={{ duration: 19, repeat: Infinity, ease: "easeInOut" }}
+        className="pointer-events-none absolute -left-24 bottom-10 h-64 w-64 rounded-full bg-primary/8 blur-3xl sm:h-80 sm:w-80"
+      />
       <Container className="flex min-h-[calc(100dvh-4.5rem)] items-center py-16 sm:py-20 lg:py-24">
         <div className="grid w-full gap-14 lg:grid-cols-[minmax(0,1.55fr)_minmax(16rem,0.45fr)] lg:items-end lg:gap-16">
           <div>
@@ -75,7 +87,7 @@ const Banner: React.FC = () => {
             initial={{ opacity: 0, x: 18 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.65, delay: 0.34, ease: [0.22, 1, 0.36, 1] }}
-            className="border-t border-border pt-6 lg:border-l lg:border-t-0 lg:pb-2 lg:pl-7 lg:pt-0"
+            className="ambient-panel border border-border/80 p-5 backdrop-blur-[2px] sm:p-6 lg:pb-6"
           >
             <div>
               <p className="eyebrow min-h-[0.8rem] text-ink-muted">

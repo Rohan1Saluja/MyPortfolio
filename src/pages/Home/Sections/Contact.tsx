@@ -7,6 +7,7 @@ import { LoadingIcon } from "../../../assets/icons";
 import CustomButton from "../../../components/UI/CustomButton";
 import CustomTextField from "../../../components/UI/CustomTextField";
 import Container from "../Components/Layout/Container";
+import TypewriterText from "../Components/Layout/TypewriterText";
 
 const Contact: React.FC = () => {
   const [loading, setLoading] = React.useState(false);
@@ -47,7 +48,9 @@ const Contact: React.FC = () => {
       <Container className="py-16 sm:py-20 lg:py-24">
         <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
           <div>
-            <p className="eyebrow text-primary">06 / Contact</p>
+            <p className="eyebrow min-h-[0.8rem] text-primary">
+              <TypewriterText text="06 / Contact" speedMs={48} />
+            </p>
 
             <h2 className="mt-6 max-w-xl text-[clamp(2.7rem,6vw,5.5rem)] font-medium leading-[0.98] tracking-[-0.05em] text-ink">
               Have a product problem worth solving?
@@ -59,10 +62,10 @@ const Contact: React.FC = () => {
             </p>
 
             <a
-              href="mailto:rohansalujamusic@gmail.com"
+              href="mailto:rohansaluja1101@gmail.com"
               className="group mt-9 inline-flex items-center gap-2 border-b border-border-strong pb-1 text-sm text-ink transition-colors hover:border-primary hover:text-primary"
             >
-              rohansalujamusic@gmail.com
+              rohansaluja1101@gmail.com
               <FiArrowUpRight className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
           </div>
@@ -121,7 +124,10 @@ const Contact: React.FC = () => {
 
         <footer className="mt-20 flex flex-col gap-3 border-t border-border pt-6 text-xs text-ink-muted sm:flex-row sm:items-center sm:justify-between">
           <span>Rohan Saluja · Software engineer</span>
-          <span>Built with intention, not a template.</span>
+          <TypewriterText
+            text="Built with intention, not a template."
+            speedMs={28}
+          />
         </footer>
       </Container>
     </section>
