@@ -213,3 +213,21 @@
   /* However, Tailwind v4 might have built-in ways or conventions for this,
        often using arbitrary values like `delay-[100ms]` */
 }
+
+
+@keyframes caret-blink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  46%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@layer utilities {
+  .animate-caret-blink {
+    animation: caret-blink 0.9s steps(1, end) infinite;
+  }
+}

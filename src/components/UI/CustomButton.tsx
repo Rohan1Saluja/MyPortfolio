@@ -1,161 +1,115 @@
-import React, { ReactNode, MouseEvent } from "react";
+import React, { MouseEvent, ReactNode } from "react";
 import MuiButton, { ButtonProps as MuiButtonProps } from "@mui/material/Button";
 import CircularProgress from "@mui/material/CircularProgress";
-import { SxProps, Theme } from "@mui/material/styles";
 
-// --- Define Simpler Props Interface ---
 interface CustomButtonProps {
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
   children: ReactNode;
   type?: "button" | "submit" | "reset";
   disabled?: boolean;
-  className?: string; // Allow passing custom classes if needed
-  sx?: SxProps<Theme>; // Allow sx prop for overrides
-  variant?: "primary" | "outlined" | "text"; // Simplified variants based on theme
+  className?: string;
+  sx?: Record<string, unknown>;
+  variant?: "primary" | "outlined" | "text";
   loading?: boolean;
-  icon?: ReactNode; // Optional icon (will be startIcon)
+  icon?: ReactNode;
   name?: string;
-  href?: string; // For link buttons
-  // Add other frequently used MUI props if needed (e.g., size)
-  size?: MuiButtonProps["size"]; // Use MUI's size prop directly
+  href?: string;
+  size?: MuiButtonProps["size"];
 }
 
-// --- The Simpler Component ---
 const CustomButton: React.FC<CustomButtonProps> = ({
   onClick,
   children,
   type = "button",
   disabled = false,
-  className,
-  sx = {}, // Default sx to empty object
-  variant = "primary", // Default to 'primary' variant
+  className = "",
+  sx = {},
+  variant = "primary",
   loading = false,
   icon,
   name,
   href,
-  size = "medium", // Default MUI size
-  // Capture any other props user might pass (though not explicitly defined above)
+  size = "medium",
   ...rest
 }) => {
-  // Determine actual disabled state
   const isDisabled = disabled || loading;
 
-  // Define base styles using sx
-  const baseSx: SxProps<Theme> = {
-    borderRadius: "12px", // Your desired border-radius
-    textTransform: "none", // Keep text casing as is
+  const baseSx: Record<string, unknown> = {
+    borderRadius: "2px",
+    textTransform: "none",
     fontWeight: 600,
+    letterSpacing: "-0.01em",
     padding:
       size === "large"
-        ? "12px 30px"
+        ? "12px 22px"
         : size === "small"
-        ? "6px 16px"
-        : "10px 24px", // Basic size handling
+          ? "7px 14px"
+          : "10px 18px",
     minWidth: "fit-content",
     boxShadow: "none",
+    transition: "background-color 180ms ease, color 180ms ease, border-color 180ms ease",
     "&:hover": {
       boxShadow: "none",
     },
-    // Base styles for disabled/loading state (visual cue)
-    ...(isDisabled && {
-      cursor: "not-allowed",
-    }),
   };
 
-  // Define variant-specific styles using sx
-  let variantSx: SxProps<Theme> = {};
-  switch (variant) {
-    case "primary":
-      variantSx = {
-        backgroundColor: "var(--color-primary)",
-        color: "var(--color-background-900)",
-        border: "none",
-        "&:hover": {
-          backgroundColor: "var(--color-primary-400)", // Or primary-600
-        },
-        ...(isDisabled && {
-          backgroundColor: "var(--color-text-800)",
-          color: "var(--color-text-600)",
-          // Prevent hover styles when disabled
-          "&:hover": {
-            backgroundColor: "var(--color-text-800)",
-          },
-        }),
-      };
-      break;
-
-    case "outlined":
-      variantSx = {
+  const variants: Record<string, Record<string, unknown>> = {
+    primary: {
+      backgroundColor: "var(--color-primary)",
+      color: "var(--color-page)",
+      border: "1px solid var(--color-primary)",
+      "&:hover": {
+        backgroundColor: "var(--color-primary-400)",
+        borderColor: "var(--color-primary-400)",
+      },
+    },
+    outlined: {
+      backgroundColor: "transparent",
+      color: "var(--color-ink)",
+      border: "1px solid var(--color-border-strong)",
+      "&:hover": {
         borderColor: "var(--color-primary)",
         color: "var(--color-primary)",
-        borderWidth: "1px",
-        borderStyle: "solid",
+      },
+    },
+    text: {
+      backgroundColor: "transparent",
+      color: "var(--color-ink-secondary)",
+      border: "1px solid transparent",
+      "&:hover": {
         backgroundColor: "transparent",
-        "&:hover": {
-          backgroundColor: "rgba(var(--color-primary-rgb), 0.08)", // Assumes --color-primary-rgb is set
-          borderColor: "var(--color-primary-400)",
-          color: "var(--color-primary-400)",
-        },
-        ...(isDisabled && {
-          borderColor: "var(--color-text-700)",
-          color: "var(--color-text-700)",
-          // Prevent hover styles when disabled
-          "&:hover": {
-            backgroundColor: "transparent",
-            borderColor: "var(--color-text-700)",
-          },
-        }),
-      };
-      break;
-
-    case "text":
-      variantSx = {
-        color: "var(--color-primary)",
-        backgroundColor: "transparent",
-        border: "none",
-        "&:hover": {
-          backgroundColor: "rgba(var(--color-primary-rgb), 0.08)",
-          color: "var(--color-primary-400)",
-        },
-        ...(isDisabled && {
-          color: "var(--color-text-700)",
-          // Prevent hover styles when disabled
-          "&:hover": {
-            backgroundColor: "transparent",
-          },
-        }),
-      };
-      break;
-  }
-
-  // Combine base, variant, and user-provided sx styles
-  const combinedSx: SxProps<Theme> = {
-    ...baseSx,
-    ...variantSx,
-    ...sx, // User overrides take precedence
+        color: "var(--color-ink)",
+      },
+    },
   };
 
   return (
     <MuiButton
-      variant="text" // Use base MUI variant, styling handled by sx
+      variant="text"
       name={name}
       type={type}
       disabled={isDisabled}
       onClick={onClick}
-      className={`!shadow-sm shadow-background-600  ${
-        variant === "primary" && !isDisabled ? "button-shine" : ""
-      } ${className}`}
-      sx={combinedSx}
+      className={className}
+      sx={{
+        ...baseSx,
+        ...variants[variant],
+        ...(isDisabled
+          ? {
+              opacity: 0.5,
+              cursor: "not-allowed",
+            }
+          : {}),
+        ...sx,
+      }}
       href={href}
-      size={size} // Pass MUI size prop through
+      size={size}
       startIcon={
         loading ? <CircularProgress size="1em" color="inherit" /> : icon
-      } // Show spinner or user icon
+      }
       {...rest}
     >
-      {/* Only show children when not loading */}
       {!loading && children}
-      {/* You could add loadingText here if needed later */}
     </MuiButton>
   );
 };

@@ -1,34 +1,44 @@
 import React from "react";
 import { EventSummaryModel } from "../../../interfaces/common.model";
-import { motion } from "framer-motion";
 
 interface Props {
   event: EventSummaryModel;
-  onClick?: any;
+  onClick?: () => void;
 }
 
 const EventSummaryCard: React.FC<Props> = ({ event, onClick }) => {
   return (
-    <motion.div
-      className="border border-secondary-500/35 rounded-lg overflow-x-hidden shadow-xl backdrop-blur-lg bg-white/10 hover:bg-white/20 hover:cursor-pointer transform transition-transform duration-300 hover:scale-[101%]"
+    <button
+      type="button"
       onClick={onClick}
-      initial={{ opacity: 0, scale: 0.95 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.8, ease: "easeInOut" }}
+      className="group block w-full text-left"
     >
-      <img src={event?.image} alt={""} className="w-full h-48 object-cover" />
-      <div className="p-4">
-        <h2 className="font-bold text-lg">{event?.title}</h2>
-        <p className="text-sm text-gray-500">{event?.organizer}</p>
-        <p className="text-sm mt-2">
-          {event?.date} • {event?.time}
-        </p>
-        <p className="text-sm">
+      <div className="overflow-hidden bg-surface">
+        <img
+          src={event?.image}
+          alt={event?.title ? `${event.title} event` : "Community event"}
+          loading="lazy"
+          className="aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-[1.015]"
+        />
+      </div>
+
+      <div className="mt-5 border-t border-border pt-4">
+        <div className="flex items-start justify-between gap-4">
+          <h3 className="text-lg font-medium tracking-tight text-ink transition-colors group-hover:text-primary">
+            {event?.title}
+          </h3>
+          <span className="shrink-0 text-sm text-ink-muted">↗</span>
+        </div>
+
+        <p className="mt-2 text-sm text-ink-secondary">{event?.organizer}</p>
+
+        <p className="mt-3 text-xs leading-5 text-ink-muted">
+          {event?.date} · {event?.time}
+          <br />
           {event?.venue}, {event?.city}
         </p>
       </div>
-    </motion.div>
+    </button>
   );
 };
 

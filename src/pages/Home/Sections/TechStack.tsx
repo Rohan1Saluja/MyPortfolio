@@ -1,59 +1,66 @@
+import { motion } from "framer-motion";
 import LeetCodeActivity from "../Components/LeetCode";
+import Container from "../Components/Layout/Container";
+import SectionHeader from "../Components/Layout/SectionHeader";
 import { capabilities } from "../utils";
 
 const TechStack: React.FC = () => {
   return (
-    <section id="capabilities" className="px-6 py-14 md:px-10 md:py-20">
-      <div className="mx-auto max-w-6xl">
-        <div className="mb-12 max-w-2xl md:mb-16">
-          <p className="mb-3 text-sm uppercase tracking-[0.2em] text-primary">
-            Engineering capabilities
-          </p>
+    <section
+      id="capabilities"
+      className="section-space scroll-mt-20 border-t border-border/70"
+    >
+      <Container>
+        <SectionHeader
+          index="03"
+          eyebrow="Engineering capabilities"
+          title="Depth where the product needs it."
+          description="The work moves across interfaces, backend systems, architecture, infrastructure, and applied AI. The emphasis is on choosing the right layer to solve the problem."
+        />
 
-          <h2 className="text-3xl font-semibold tracking-tight text-text-200 md:text-5xl">
-            How I build.
-          </h2>
-
-          <p className="mt-4 text-lg leading-relaxed text-text-300">
-            I work across product interfaces, backend systems, infrastructure,
-            architecture, and applied AI depending on what the product needs.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 border-l border-t border-secondary-500/20 md:grid-cols-2">
+        <div className="mt-16 divide-y divide-border border-y border-border lg:ml-[11rem]">
           {capabilities.map((capability, index) => (
-            <div
+            <motion.article
               key={capability.category}
-              className="border-b border-r border-secondary-500/20 p-7 md:p-8"
+              initial={{ opacity: 0, x: -18 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.045,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="grid gap-5 py-8 sm:py-10 lg:grid-cols-[3rem_14rem_1fr] lg:gap-8"
             >
-              <span className="text-sm text-text-300">
+              <span className="text-xs tabular-nums text-ink-muted">
                 {String(index + 1).padStart(2, "0")}
               </span>
 
-              <h3 className="mt-5 text-xl font-semibold text-text-200 md:text-2xl">
+              <h3 className="text-xl font-medium tracking-tight text-ink sm:text-2xl">
                 {capability.category}
               </h3>
 
-              <p className="mt-3 max-w-xl leading-relaxed text-text-300">
-                {capability.description}
-              </p>
+              <div>
+                <p className="max-w-2xl leading-7 text-ink-secondary">
+                  {capability.description}
+                </p>
 
-              <div className="mt-6 flex flex-wrap gap-x-4 gap-y-3">
-                {capability.items.map((item) => (
-                  <span
-                    key={item}
-                    className="border-b border-secondary-500/30 pb-1 text-sm text-text-200"
-                  >
-                    {item}
-                  </span>
-                ))}
+                <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2">
+                  {capability.items.map((item) => (
+                    <span key={item} className="text-sm text-ink-muted">
+                      {item}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
+            </motion.article>
           ))}
         </div>
 
-        <LeetCodeActivity />
-      </div>
+        <div className="mt-14 lg:ml-[11rem]">
+          <LeetCodeActivity />
+        </div>
+      </Container>
     </section>
   );
 };

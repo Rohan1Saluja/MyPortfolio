@@ -1,9 +1,10 @@
-import Header from "./Header";
 import { useEffect } from "react";
+import type { ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
+import Header from "./Header";
 
 interface Props {
-  children?: any;
+  children?: ReactNode;
 }
 
 const PageLayout = ({ children }: Props) => {
@@ -16,7 +17,7 @@ const PageLayout = ({ children }: Props) => {
   }, [navigate]);
 
   return (
-    <div className="w-full h-[100dvh] overflow-x-auto">
+    <div className="min-h-dvh w-full overflow-x-clip bg-page text-ink">
       <Header />
       {children}
     </div>

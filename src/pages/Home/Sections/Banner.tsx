@@ -1,59 +1,108 @@
-import CustomButton from "../../../components/UI/CustomButton";
+import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
+import Container from "../Components/Layout/Container";
+import TypewriterText from "../Components/Layout/TypewriterText";
 
 const Banner: React.FC = () => {
   const handleScroll = () => {
-    const folioSection = document.querySelector("#folio");
-
-    if (folioSection) {
-      folioSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
+    document.querySelector("#folio")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   };
 
   return (
-    <section className="relative min-h-[78vh] flex items-center px-6 py-16 md:px-10">
-      <div className="w-full max-w-6xl mx-auto">
-        <div className="max-w-4xl">
-          <p className="mb-5 text-sm md:text-base font-medium uppercase tracking-[0.2em] text-primary animate-fade-in">
-            Product Engineer · Frontend · Backend · Systems
-          </p>
-
-          <h1 className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-semibold leading-[1.05] tracking-tight text-text-200 animate-fade-in">
-            I build products that survive contact with the real world.
-          </h1>
-
-          <p className="mt-7 max-w-2xl text-base sm:text-lg md:text-xl leading-relaxed text-text-300 animate-fade-in-up">
-            I'm Rohan Saluja, a software engineer working across web, mobile,
-            backend, infrastructure, and product architecture, building systems
-            that go from idea to production and scale with the businesses behind
-            them.
-          </p>
-
-          <div className="mt-9 flex flex-wrap items-center gap-4 animate-fade-in-up">
-            <CustomButton onClick={handleScroll}>Explore My Work</CustomButton>
-
-            <a
-              href="https://github.com/Rohan1Saluja"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-5 py-3 text-sm font-medium text-text-200 border border-secondary-500/40 rounded-lg 
-              hover:bg-white/5 transition-colors flex items-center gap-2"
+    <section className="border-b border-border/70">
+      <Container className="flex min-h-[calc(100dvh-4.5rem)] items-center py-16 sm:py-20 lg:py-24">
+        <div className="grid w-full gap-14 lg:grid-cols-[minmax(0,1.55fr)_minmax(16rem,0.45fr)] lg:items-end lg:gap-16">
+          <div>
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="eyebrow mb-7 text-primary"
             >
-              View GitHub <FiArrowRight className="mt-0.5" />
-            </a>
-          </div>
-        </div>
+              Product engineering · systems · ownership
+            </motion.p>
 
-        <div className="mt-14 md:mt-20 pt-7 border-t border-secondary-500/20">
-          <p className="text-sm text-text-300">
-            Built across commerce, logistics, AI, healthcare, enterprise SaaS,
-            media, and developer-facing systems.
-          </p>
+            <motion.h1
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+              className="display-title max-w-5xl text-balance text-ink"
+            >
+              Software engineering from interface to infrastructure.
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.65, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
+              className="body-large mt-8 max-w-2xl text-ink-secondary"
+            >
+              I&apos;m Rohan Saluja. I build and operate products across web,
+              mobile, backend, infrastructure, and product architecture—from an
+              early idea through production scale.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.3 }}
+              className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-4"
+            >
+              <button
+                type="button"
+                onClick={handleScroll}
+                className="group inline-flex items-center gap-2 border-b border-primary/60 pb-1 text-sm font-medium text-ink transition-colors hover:border-primary hover:text-primary"
+              >
+                Explore selected work
+                <FiArrowRight className="transition-transform group-hover:translate-x-1" />
+              </button>
+
+              <a
+                href="https://github.com/Rohan1Saluja"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-ink-secondary transition-colors hover:text-ink"
+              >
+                GitHub ↗
+              </a>
+            </motion.div>
+          </div>
+
+          <motion.aside
+            initial={{ opacity: 0, x: 18 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.65, delay: 0.34, ease: [0.22, 1, 0.36, 1] }}
+            className="border-t border-border pt-6 lg:border-l lg:border-t-0 lg:pb-2 lg:pl-7 lg:pt-0"
+          >
+            <div>
+              <p className="eyebrow min-h-[0.8rem] text-ink-muted">
+                <TypewriterText text="Current focus" delayMs={520} speedMs={55} />
+              </p>
+              <p className="mt-3 text-sm leading-6 text-ink-secondary">
+                Building Calyrn, an independent market research product, while
+                continuing to work across production software and systems.
+              </p>
+            </div>
+
+            <div className="mt-8 border-t border-border pt-6">
+              <p className="eyebrow min-h-[0.8rem] text-ink-muted">
+                <TypewriterText
+                  text="Experience surface"
+                  delayMs={850}
+                  speedMs={42}
+                />
+              </p>
+              <p className="mt-3 text-sm leading-6 text-ink-secondary">
+                Commerce, logistics, AI, healthcare, enterprise SaaS, media,
+                infrastructure, and developer-facing systems.
+              </p>
+            </div>
+          </motion.aside>
         </div>
-      </div>
+      </Container>
     </section>
   );
 };

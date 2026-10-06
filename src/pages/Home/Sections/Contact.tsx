@@ -1,29 +1,27 @@
 import React from "react";
-import CustomTextField from "../../../components/UI/CustomTextField";
-import CustomButton from "../../../components/UI/CustomButton";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { FiArrowUpRight, FiSend } from "react-icons/fi";
 import { sendMail } from "../../../api/contact";
 import { LoadingIcon } from "../../../assets/icons";
-import { FiSend } from "react-icons/fi";
+import CustomButton from "../../../components/UI/CustomButton";
+import CustomTextField from "../../../components/UI/CustomTextField";
+import Container from "../Components/Layout/Container";
 
 const Contact: React.FC = () => {
   const [loading, setLoading] = React.useState(false);
 
-  const initiateMail = React.useCallback(
-    async (payload: any) => {
-      setLoading(true);
-      try {
-        const response = await sendMail(payload);
-      } catch (error: any) {
-        console.error("Error sending mail:", error);
-        //   return { success: false, message: error.message };
-      } finally {
-        setLoading(false);
-      }
-    },
-    [setLoading]
-  );
+  const initiateMail = React.useCallback(async (payload: unknown) => {
+    setLoading(true);
+
+    try {
+      await sendMail(payload);
+    } catch (error) {
+      console.error("Error sending mail:", error);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
 
   const formik = useFormik({
     initialValues: {
@@ -40,68 +38,92 @@ const Contact: React.FC = () => {
     }),
     onSubmit: async (values, { resetForm }) => {
       await initiateMail(values);
-      setTimeout(resetForm, 500);
+      window.setTimeout(resetForm, 500);
     },
   });
 
-  const formData = formik.values;
-
   return (
-    <section id="contact" className="py-6 md:py-10">
-      <div className="container mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl font-semibold mb-10 md:mb-12 text-center text-text">
-          I'd Love to Hear From You!
-        </h2>
+    <section id="contact" className="scroll-mt-20 border-t border-border">
+      <Container className="py-16 sm:py-20 lg:py-24">
+        <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+          <div>
+            <p className="eyebrow text-primary">06 / Contact</p>
 
-        <form
-          onSubmit={formik.handleSubmit}
-          className="max-w-lg mx-auto flex flex-col gap-6"
-        >
-          <CustomTextField
-            label="Name"
-            name="name"
-            value={formData.name}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            error={formik.touched.name && Boolean(formik.errors.name)}
-            helperText={formik.touched.name ? formik.errors.name : " "}
-            fullWidth
-          />
+            <h2 className="mt-6 max-w-xl text-[clamp(2.7rem,6vw,5.5rem)] font-medium leading-[0.98] tracking-[-0.05em] text-ink">
+              Have a product problem worth solving?
+            </h2>
 
-          <CustomTextField
-            label="Email"
-            name="email"
-            type="email"
-            value={formData.email}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            error={formik.touched.email && Boolean(formik.errors.email)}
-            helperText={formik.touched.email ? formik.errors.email : " "}
-            fullWidth
-          />
+            <p className="body-large mt-7 max-w-lg text-ink-secondary">
+              I&apos;m always interested in thoughtful product, engineering, and
+              systems conversations.
+            </p>
 
-          <CustomTextField
-            textArea
-            label="Message"
-            name="message"
-            value={formData.message}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            fullWidth
-            rows={5}
-          />
+            <a
+              href="mailto:rohansalujamusic@gmail.com"
+              className="group mt-9 inline-flex items-center gap-2 border-b border-border-strong pb-1 text-sm text-ink transition-colors hover:border-primary hover:text-primary"
+            >
+              rohansalujamusic@gmail.com
+              <FiArrowUpRight className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            </a>
+          </div>
 
-          <CustomButton type="submit" size="large" sx={{ mt: 2 }}>
-            {loading ? (
-              <LoadingIcon />
-            ) : (
-              <p className="flex items-center gap-2">
-                Send <FiSend />{" "}
-              </p>
-            )}
-          </CustomButton>
-        </form>
-      </div>
+          <form
+            onSubmit={formik.handleSubmit}
+            className="flex flex-col gap-5 border-t border-border pt-8 lg:border-t-0 lg:pt-0"
+          >
+            <CustomTextField
+              label="Name"
+              name="name"
+              value={formik.values.name}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={formik.touched.name && Boolean(formik.errors.name)}
+              helperText={formik.touched.name ? formik.errors.name : " "}
+              fullWidth
+            />
+
+            <CustomTextField
+              label="Email"
+              name="email"
+              type="email"
+              value={formik.values.email}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={formik.touched.email && Boolean(formik.errors.email)}
+              helperText={formik.touched.email ? formik.errors.email : " "}
+              fullWidth
+            />
+
+            <CustomTextField
+              textArea
+              label="Message"
+              name="message"
+              value={formik.values.message}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              fullWidth
+              rows={5}
+            />
+
+            <div className="pt-2">
+              <CustomButton type="submit" size="large" disabled={loading}>
+                {loading ? (
+                  <LoadingIcon />
+                ) : (
+                  <span className="flex items-center gap-2">
+                    Send message <FiSend />
+                  </span>
+                )}
+              </CustomButton>
+            </div>
+          </form>
+        </div>
+
+        <footer className="mt-20 flex flex-col gap-3 border-t border-border pt-6 text-xs text-ink-muted sm:flex-row sm:items-center sm:justify-between">
+          <span>Rohan Saluja · Software engineer</span>
+          <span>Built with intention, not a template.</span>
+        </footer>
+      </Container>
     </section>
   );
 };
