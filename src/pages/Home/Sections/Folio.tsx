@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
 import Container from "../Components/Layout/Container";
 import SectionHeader from "../Components/Layout/SectionHeader";
@@ -22,8 +23,16 @@ const Folio: React.FC = () => {
             const reverse = index % 2 === 1;
 
             return (
-              <article
+              <motion.article
                 key={project.id}
+                initial={{ opacity: 0, y: 34 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.22 }}
+                transition={{
+                  duration: 0.7,
+                  delay: index * 0.05,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
                 className="grid gap-9 border-b border-border py-12 sm:py-16 lg:grid-cols-12 lg:gap-10 lg:py-20"
               >
                 <div
@@ -138,7 +147,7 @@ const Folio: React.FC = () => {
                     </div>
                   )}
                 </div>
-              </article>
+              </motion.article>
             );
           })}
         </div>
@@ -160,8 +169,12 @@ const Folio: React.FC = () => {
 
             <div className="divide-y divide-border">
               {supportingProjects.map((project) => (
-                <article
+                <motion.article
                   key={project.id}
+                  initial={{ opacity: 0, y: 18 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.45 }}
+                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                   className="grid gap-6 py-8 md:grid-cols-[10rem_1fr_auto] md:items-start md:gap-10"
                 >
                   <div className="text-xs text-ink-muted">
@@ -189,7 +202,7 @@ const Folio: React.FC = () => {
                       Visit ↗
                     </a>
                   )}
-                </article>
+                </motion.article>
               ))}
             </div>
           </div>
