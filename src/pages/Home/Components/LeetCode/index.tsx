@@ -22,12 +22,44 @@ const LeetCodeActivity: React.FC = () => {
     );
   }
 
-  if (error && !data) {
-    return null;
-  }
+  if ((error && !data) || !data) {
+    return (
+      <div className="border-x border-b border-border bg-surface p-7 md:p-8">
+        <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
+          <div className="max-w-xl">
+            <span className="text-sm text-ink-muted">
+              {String(capabilities.length + 1).padStart(2, "0")}
+            </span>
 
-  if (!data) {
-    return null;
+            <h3 className="mt-4 text-xl font-semibold text-ink md:mt-5 md:text-2xl">
+              Problem solving
+            </h3>
+
+            <p className="mt-3 max-w-lg text-sm leading-relaxed text-ink-secondary sm:text-base">
+              My live LeetCode dashboard normally shows solved problems,
+              submissions, active days, streak, difficulty breakdown, badges,
+              yearly heatmap, and recent accepted submissions.
+            </p>
+
+            <p className="mt-4 text-sm text-ink-muted">
+              Live activity is temporarily unavailable on this deployment.
+            </p>
+          </div>
+
+          <a
+            href="https://leetcode.com/u/Rohan1Saluja/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex w-fit shrink-0 items-center gap-2 border border-border-strong px-3.5 py-2 text-sm text-ink-secondary transition-colors hover:border-primary hover:text-primary"
+          >
+            View LeetCode
+            <span className="transition-transform duration-200 group-hover:translate-x-0.5">
+              ↗
+            </span>
+          </a>
+        </div>
+      </div>
+    );
   }
 
   return (
