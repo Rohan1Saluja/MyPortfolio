@@ -2,6 +2,7 @@ import MyPixarArt from "../../../assets/logos/PixarArt.jpg";
 import { Instagram, LinkedIn, X } from "../../../assets/icons";
 import Container from "../Components/Layout/Container";
 import SectionHeader from "../Components/Layout/SectionHeader";
+import TypewriterText from "../Components/Layout/TypewriterText";
 
 const About: React.FC = () => {
   return (
@@ -86,7 +87,7 @@ const About: React.FC = () => {
             </div>
 
             <div className="mt-10 grid gap-4 border-t border-border pt-7 sm:grid-cols-[10rem_1fr]">
-              <p className="eyebrow pt-1 text-ink-muted">Outside engineering</p>
+              <p className="eyebrow min-h-[0.8rem] pt-1 text-ink-muted"><TypewriterText text="Outside engineering" speedMs={40} /></p>
               <p className="leading-7 text-ink-secondary">
                 Music, technology communities, and meeting people who enjoy
                 building ambitious things.
