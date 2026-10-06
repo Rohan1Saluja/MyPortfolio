@@ -21,6 +21,32 @@
 html {
   background: var(--color-page);
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border-strong) var(--color-page);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-page);
+}
+
+::-webkit-scrollbar-thumb {
+  min-height: 44px;
+  border: 2px solid var(--color-page);
+  border-radius: 999px;
+  background: var(--color-border-strong);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-ink-muted);
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--color-page);
 }
 
 body {
