@@ -139,8 +139,7 @@ export const projects = [
       "CI/CD & observability",
     ],
     metrics: [
-      { value: "100K+", label: "MAU" },
-      { value: "250 - 300%", label: "Peak traffic" },
+      { value: "250K+", label: "Average MAU" },
       { value: "75%", label: "MoM growth" },
     ],
     image: "/previews/stylezen-preview.png",
@@ -197,14 +196,9 @@ export const projects = [
 
 export const impact = [
   {
-    value: "100K+",
-    label: "Monthly active users",
+    value: "250K+",
+    label: "Average monthly active users",
     description: "Supported across production commerce platforms",
-  },
-  {
-    value: "250 - 300%",
-    label: "Peak traffic",
-    description: "Handled during high-demand periods",
   },
   {
     value: "75%",
