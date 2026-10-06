@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Container from "../Components/Layout/Container";
 import SectionHeader from "../Components/Layout/SectionHeader";
 import { impact } from "../utils";
@@ -16,7 +17,12 @@ const Highlights = () => {
         />
 
         <div className="mt-16 grid gap-12 border-t border-border pt-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20 lg:pt-14">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+          >
             <p className="text-[clamp(4.5rem,10vw,8.5rem)] font-medium leading-none tracking-[-0.07em] text-primary">
               {primaryImpact.value}
             </p>
@@ -26,12 +32,20 @@ const Highlights = () => {
             <p className="mt-3 max-w-sm leading-7 text-ink-secondary">
               {primaryImpact.description}
             </p>
-          </div>
+          </motion.div>
 
           <div className="divide-y divide-border border-y border-border">
-            {supportingImpact.map((item) => (
-              <div
+            {supportingImpact.map((item, index) => (
+              <motion.div
                 key={item.label}
+                initial={{ opacity: 0, x: 22 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.45 }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.07,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
                 className="grid gap-3 py-6 sm:grid-cols-[8rem_1fr] sm:items-start sm:gap-8"
               >
                 <p className="text-2xl font-medium tracking-[-0.03em] text-ink sm:text-3xl">
@@ -44,7 +58,7 @@ const Highlights = () => {
                     {item.description}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
