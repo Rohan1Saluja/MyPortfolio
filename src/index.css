@@ -82,7 +82,7 @@ button {
   }
 
   .display-title {
-    font-size: clamp(3.35rem, 8vw, 7.6rem);
+    font-size: clamp(2.75rem, 6.2vw, 5.9rem);
     font-weight: 520;
     line-height: 0.94;
     letter-spacing: -0.055em;
