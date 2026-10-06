@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
 import Container from "../Components/Layout/Container";
 import SectionHeader from "../Components/Layout/SectionHeader";
+import TypewriterText from "../Components/Layout/TypewriterText";
 import { projects } from "../utils";
 
 const Folio: React.FC = () => {
@@ -156,7 +157,7 @@ const Folio: React.FC = () => {
           <div className="mt-16 lg:mt-20">
             <div className="flex items-end justify-between gap-6 border-b border-border pb-5">
               <div>
-                <p className="eyebrow text-primary">Additional experience</p>
+                <p className="eyebrow min-h-[0.8rem] text-primary"><TypewriterText text="Additional experience" speedMs={38} /></p>
                 <h3 className="mt-3 text-2xl font-medium tracking-tight text-ink sm:text-3xl">
                   Supporting production work.
                 </h3>
