@@ -98,7 +98,7 @@ const SolvedBreakdown: React.FC<SolvedBreakdownProps> = ({
     <div
       ref={containerRef}
       onClick={replayAnimation}
-      className="group cursor-pointer rounded-2xl border border-neutral-800/80 bg-neutral-950/40 p-5 transition-all duration-300 hover:border-neutral-700"
+      className="group min-w-0 cursor-pointer overflow-hidden rounded-2xl border border-neutral-800/80 bg-neutral-950/40 p-4 transition-all duration-300 hover:border-neutral-700 sm:p-5"
     >
       <div className="mb-5 flex items-center justify-between">
         <div>
