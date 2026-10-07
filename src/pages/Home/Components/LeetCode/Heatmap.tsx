@@ -30,8 +30,8 @@ const LeetCodeHeatmap: React.FC<LeetCodeHeatmapProps> = ({
   const weekCount = Math.ceil(calendarDays.length / 7);
 
   return (
-    <div className="mt-8">
-      <div className="mb-4 flex flex-wrap items-center gap-4">
+    <div className="mt-8 min-w-0">
+      <div className="mb-4 flex min-w-0 flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
         <YearToggle
           years={years}
           selectedYear={selectedYear}
@@ -49,7 +49,7 @@ const LeetCodeHeatmap: React.FC<LeetCodeHeatmapProps> = ({
           ${loading ? "opacity-40" : "opacity-100"}
         `}
       >
-        <div className="overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div className="max-w-full overflow-x-auto overscroll-x-contain pb-2 [scrollbar-width:none] [-webkit-overflow-scrolling:touch] [&::-webkit-scrollbar]:hidden">
           <div className="flex w-full min-w-[760px] gap-2">
             <WeekdayLabels />
 
@@ -114,7 +114,7 @@ const WeekdayLabels = () => {
 
 const Legend = () => {
   return (
-    <div className="ml-auto flex shrink-0 items-center gap-1.5 text-xs text-text-300">
+    <div className="flex shrink-0 items-center gap-1.5 text-xs text-text-300 sm:ml-auto">
       <span>Less</span>
 
       {[0, 1, 2, 4, 7].map((count) => (
