@@ -16,7 +16,7 @@ const LeetCodeActivity: React.FC = () => {
 
   if (loading && !data) {
     return (
-      <div className="border-x border-b border-secondary-500/20 p-7 md:p-8">
+      <div className="min-w-0 overflow-hidden border-x border-b border-secondary-500/20 p-4 sm:p-6 md:p-8">
         <div className="h-40 animate-pulse rounded-sm bg-secondary-500/5" />
       </div>
     );
@@ -102,7 +102,7 @@ const LeetCodeActivity: React.FC = () => {
 
       <Stats stats={data.stats} year={selectedYear} />
 
-      <div className="mt-8 grid gap-5 lg:grid-cols-2">
+      <div className="mt-8 grid min-w-0 gap-5 lg:grid-cols-2">
         <SolvedBreakdown
           totalSolved={data.stats.totalSolved}
           totalProblems={data.stats.totalProblems}
