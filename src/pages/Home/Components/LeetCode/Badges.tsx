@@ -75,7 +75,7 @@ const Badges: React.FC<LeetCodeBadgesProps> = ({ badges }) => {
   };
 
   return (
-    <div className="ambient-panel rounded-2xl border border-neutral-800/80 p-5 transition-all duration-300 hover:border-neutral-700">
+    <div className="ambient-panel min-w-0 overflow-hidden rounded-2xl border border-neutral-800/80 p-4 transition-all duration-300 hover:border-neutral-700 sm:p-5">
       <div className="mb-5 flex items-center justify-between gap-4">
         <div>
           <h3 className="text-sm font-medium text-neutral-200">Badges</h3>
@@ -117,7 +117,7 @@ const Badges: React.FC<LeetCodeBadgesProps> = ({ badges }) => {
       {sortedBadges.length ? (
         <div
           ref={scrollerRef}
-          className="flex snap-x snap-mandatory gap-3 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="flex max-w-full snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain pb-1 [scrollbar-width:none] [-webkit-overflow-scrolling:touch] [&::-webkit-scrollbar]:hidden"
         >
           {sortedBadges.map((badge, index) => (
             <div
